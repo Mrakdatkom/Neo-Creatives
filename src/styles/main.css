@@ -1,0 +1,117 @@
+@import "tailwindcss";
+
+@theme {
+  /* ---- Palette ---- */
+  --color-ink: #050505;
+  --color-bone: #f4f1ea;
+  --color-accent: #1e4fc8;
+
+  /* ---- Type ---- */
+  --font-display: "Archivo", "Inter", sans-serif;
+  --font-body: "Inter", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-ink);
+  overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+/* Headline: sized with clamp because Tailwind's fixed text-* scale can't hit
+   these exact fluid proportions across 375px -> 1920px viewports. */
+.hero-title {
+  font-size: clamp(2.75rem, 8vw, 7rem);
+  letter-spacing: -0.01em;
+  color: var(--color-bone);
+  /* Lets the laptop visually "cut into" the letterforms, matching the
+     reference where the flower shows through the wordmark. */
+  mix-blend-mode: difference;
+}
+
+/* Small nav mark: six bars of uneven height fading ink -> accent.
+   Not expressible as Tailwind utilities since each bar needs a distinct
+   height/color driven by its position. */
+.brand-ticks span {
+  width: 2px;
+  display: inline-block;
+  background: var(--color-accent);
+}
+
+.brand-ticks span:nth-child(1) {
+  height: 4px;
+  opacity: 0.35;
+}
+
+.brand-ticks span:nth-child(2) {
+  height: 7px;
+  opacity: 0.5;
+}
+
+.brand-ticks span:nth-child(3) {
+  height: 10px;
+  opacity: 0.65;
+}
+
+.brand-ticks span:nth-child(4) {
+  height: 13px;
+  opacity: 0.8;
+}
+
+.brand-ticks span:nth-child(5) {
+  height: 16px;
+  opacity: 0.9;
+}
+
+.brand-ticks span:nth-child(6) {
+  height: 19px;
+  opacity: 1;
+}
+
+.menu-btn span {
+  width: 3px;
+  height: 40px;
+  background: blue;
+  display: inline-block;
+}
+
+.scroll-line {
+  width: 1px;
+  height: 40px;
+  background: linear-gradient(to bottom, var(--color-bone), transparent);
+  animation: scroll-pulse 2s ease-in-out infinite;
+}
+
+@keyframes scroll-pulse {
+
+  0%,
+  100% {
+    opacity: 0.3;
+    transform: scaleY(0.6);
+    transform-origin: top;
+  }
+
+  50% {
+    opacity: 1;
+    transform: scaleY(1);
+    transform-origin: top;
+  }
+}
+
+#canvas-stage canvas {
+  display: block;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scroll-line {
+    animation: none;
+  }
+}

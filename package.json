@@ -1,0 +1,20 @@
+{
+  "name": "magnify-hero",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "npx vite",
+    "build": "npx vite build",
+    "preview": "npx vite preview"
+  },
+  "devDependencies": {
+    "vite": "^8.1.1"
+  },
+  "dependencies": {
+    "@tailwindcss/vite": "^4.3.2",
+    "gsap": "^3.15.0",
+    "tailwindcss": "^4.3.2",
+    "three": "^0.185.1"
+  }
+}
