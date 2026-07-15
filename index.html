@@ -151,14 +151,15 @@
       </div>
     </div>
 
-    <!-- Headline overlay: text sits ON TOP of the laptop via mix-blend-mode -->
-    <div class="absolute inset-0 z-20 flex items-center justify-center pointer-events-none">
-      <h1 class="hero-title font-display text-center select-none">
-        <span class="block">
-          <span class="font-light">ENGINEERING</span>
+    <!-- Headline overlay: text sits BEHIND the laptop -->
+    <div class="absolute inset-0 z-5 flex items-center justify-center pointer-events-none px-4">
+      <h1 class="hero-title font-display text-center select-none w-full max-w-[95vw] font-bold">
+        <span class="block text-[8vw] md:text-[10vw] lg:text-[11vw] leading-[0.9] tracking-wide text-white/40">
+          <span class="font-bold">ENGINEERING</span>
         </span>
-        <span class="block">
-          YOUR <span class="font-light"> PRODUCTS</span>
+        <span
+          class="block text-[8vw] md:text-[10vw] lg:text-[11vw] leading-[0.9] tracking-wide text-white/40 mt-2 md:mt-4">
+          YOUR <span class="font-bold">PRODUCTS</span>
         </span>
       </h1>
     </div>
@@ -173,12 +174,12 @@
   <!-- Spacer section so scroll-driven movement has room to play out -->
   <section class="relative min-h-screen bg-ink flex items-center justify-center px-6">
     <p class="font-body text-bone/60 max-w-md text-center text-sm">
-      Next section placeholder — the laptop keeps reacting to scroll position as this section comes into view.
+      Scaling businesses through comprehensive SaaS solutions, custom website creation, and secure data management, with
+      a focus on seamless integration and reliable execution.
     </p>
   </section>
 
-  <video id="screen-video" class="hidden" src="#" muted loop playsinline preload="auto"></video>
-  <!-- <video id="screen-video" class="hidden" src="src/videos/testvid.mp4" muted loop playsinline preload="auto"></video> -->
+  <img id="screen-image" class="hidden" src="src/images/laptop-photo.png" alt="Laptop screen content" />
 
   <script type="module" src="/src/main.js"></script>
   <!-- JavaScript for Menu Toggle -->

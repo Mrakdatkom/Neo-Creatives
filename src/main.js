@@ -3,11 +3,13 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { setupScene } from './three/setupScene.js';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
+import * as THREE from 'three';
+import { createLaptop } from './three/createLaptop.js';
 
 gsap.registerPlugin(ScrollTrigger);
 
 const stage = document.getElementById('canvas-stage');
-const videoEl = document.getElementById('screen-video');
+const imageEl = document.getElementById('screen-image');
 
 const { scene, camera, renderer } = setupScene(stage);
 
@@ -18,70 +20,64 @@ let laptop;
 loader.load('/models/laptop.gltf', (gltf) => {
   laptop = gltf.scene;
 
-  // Find the screen mesh (adjust name to match your model)
+  // Find the screen mesh
   const screenMesh = laptop.getObjectByName('Screen') ||
     laptop.getObjectByName('screen') ||
     laptop.getObjectByName('Display');
 
   if (screenMesh) {
-    // Apply video texture to the screen
-    const screenMat = buildScreenMaterial(videoEl);
-    screenMesh.material = screenMat;
+    // Create texture from image
+    const texture = new THREE.Texture(imageEl);
+    texture.colorSpace = THREE.SRGBColorSpace;
+
+    if (imageEl.complete) {
+      texture.needsUpdate = true;
+    } else {
+      imageEl.onload = () => {
+        texture.needsUpdate = true;
+        screenMesh.material.map = texture;
+        screenMesh.material.needsUpdate = true;
+      };
+    }
+
+    screenMesh.material = new THREE.MeshBasicMaterial({
+      map: texture,
+      color: 0xffffff,
+    });
     laptop.userData.screen = screenMesh;
   }
 
-  // Position, scale, and rotate like the placeholder
-  laptop.scale.setScalar(1.5);
+  // Position, scale, and rotate - REDUCED SCALE HERE
+  laptop.scale.setScalar(0.9); // Changed from 1.5 to 0.9
   laptop.position.set(0, 0.1, 0);
   laptop.rotation.x = THREE.MathUtils.degToRad(10);
   laptop.rotation.y = THREE.MathUtils.degToRad(-20);
 
   scene.add(laptop);
-
-  // Start animations after model loads
   setupAnimations(laptop);
-
   console.log('Laptop model loaded successfully!');
+
 }, undefined, (error) => {
   console.error('Error loading laptop model:', error);
-  // Fallback to procedural laptop if model fails to load
-  import('./three/createLaptop.js').then(module => {
-    const fallbackLaptop = module.createLaptop(videoEl);
-    laptop = fallbackLaptop;
-    laptop.scale.setScalar(1.5);
-    laptop.position.set(0, 0.1, 0);
-    scene.add(laptop);
-    setupAnimations(laptop);
-    console.log('Using fallback procedural laptop');
-  });
+  // Fallback to procedural laptop
+  const fallbackLaptop = createLaptop(imageEl);
+  laptop = fallbackLaptop;
+  laptop.scale.setScalar(0.9); // Changed from 1.5 to 0.9
+  laptop.position.set(0, 0.1, 0);
+  scene.add(laptop);
+  setupAnimations(laptop);
+  console.log('Using fallback procedural laptop');
 });
 
-// Helper function to create screen material with video
-function buildScreenMaterial(videoEl) {
-  let texture;
-  let usingVideo = false;
-
-  try {
-    texture = new THREE.VideoTexture(videoEl);
-    texture.colorSpace = THREE.SRGBColorSpace;
-    usingVideo = true;
-  } catch (err) {
-    texture = null;
-  }
-
-  return new THREE.MeshBasicMaterial({
-    color: usingVideo ? 0xffffff : 0x3a6ea8,
-    map: usingVideo ? texture : null,
-  });
-}
-
-// Setup animations (moved from bottom)
+// Setup animations
 function setupAnimations(laptop) {
   const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  // Gentle entrance on load
+  // Gentle entrance on load - ADJUSTED SCALE ANIMATION
   gsap.from(laptop.scale, {
-    x: 0.85, y: 0.85, z: 0.85,
+    x: 0.7, // Adjusted from 0.85 to match new scale
+    y: 0.7,
+    z: 0.7,
     duration: 1.4,
     ease: 'power3.out',
   });
@@ -114,9 +110,6 @@ function setupAnimations(laptop) {
     repeat: -1,
   });
 }
-
-// Video autoplay
-videoEl.play().catch(() => { });
 
 // ---- Render loop ----
 function tick() {

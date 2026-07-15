@@ -1,23 +1,6 @@
+// createLaptop.js
 import * as THREE from 'three';
 import { RoundedBoxGeometry } from 'three/examples/jsm/geometries/RoundedBoxGeometry.js';
-
-/**
- * Builds a more realistic placeholder laptop: rounded-edge aluminum-style
- * base + lid on a hinge cylinder, keyboard deck + trackpad detail, and a
- * bezelled screen with a video texture mapped onto it.
- *
- * SWAPPING IN A REAL MODEL LATER:
- *   import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
- *   const loader = new GLTFLoader();
- *   loader.load('/models/laptop.glb', (gltf) => {
- *     const laptop = gltf.scene;
- *     const screenMesh = laptop.getObjectByName('Screen'); // name from your model
- *     screenMesh.material = buildScreenMaterial(videoEl).material;
- *     group.add(laptop);
- *   });
- * The rest of the scroll-animation code targets `group`, so it doesn't care
- * whether the mesh underneath is procedural or a loaded model.
- */
 
 // ---- Shared metal material (brushed-aluminum-ish, matches a dark chassis) ----
 function metalMaterial(color = 0x1c1d20) {
@@ -30,26 +13,44 @@ function metalMaterial(color = 0x1c1d20) {
   });
 }
 
-function buildScreenMaterial(videoEl) {
+// Updated to handle both video AND image elements
+function buildScreenMaterial(imageOrVideoEl) {
   let texture;
-  let usingVideo = false;
+  let usingImage = false;
 
   try {
-    texture = new THREE.VideoTexture(videoEl);
-    texture.colorSpace = THREE.SRGBColorSpace;
-    usingVideo = true;
+    // Check if it's a video element
+    if (imageOrVideoEl.tagName === 'VIDEO') {
+      texture = new THREE.VideoTexture(imageOrVideoEl);
+      texture.colorSpace = THREE.SRGBColorSpace;
+      usingImage = false;
+    }
+    // Check if it's an image element
+    else if (imageOrVideoEl.tagName === 'IMG') {
+      texture = new THREE.Texture(imageOrVideoEl);
+      texture.colorSpace = THREE.SRGBColorSpace;
+
+      // Important: Handle image loading
+      if (imageOrVideoEl.complete) {
+        texture.needsUpdate = true;
+      } else {
+        imageOrVideoEl.onload = () => {
+          texture.needsUpdate = true;
+        };
+      }
+      usingImage = true;
+    }
   } catch (err) {
+    console.warn('Failed to create texture, using fallback color');
     texture = null;
   }
 
   const material = new THREE.MeshBasicMaterial({
-    // Bright placeholder glow (not near-black) so the screen reads as a lit
-    // panel even before a real video is dropped into public/demo-reel.mp4
-    color: usingVideo ? 0xffffff : 0x3a6ea8,
-    map: usingVideo ? texture : null,
+    color: texture ? 0xffffff : 0x3a6ea8,
+    map: texture || null,
   });
 
-  return { material, usingVideo };
+  return { material, usingImage };
 }
 
 // Draws a simple keyboard grid onto a canvas so the deck isn't a blank slab.
@@ -95,7 +96,7 @@ function buildKeyboardTexture() {
   return texture;
 }
 
-export function createLaptop(videoEl) {
+export function createLaptop(imageOrVideoEl) {
   const group = new THREE.Group();
   const chassisMat = metalMaterial();
 
@@ -113,8 +114,7 @@ export function createLaptop(videoEl) {
   base.position.y = -0.55;
   group.add(base);
 
-  // Keyboard deck: a thin inset panel on top of the base with a keyboard
-  // texture, sitting just above the chassis surface to avoid z-fighting.
+  // Keyboard deck
   const deckTexture = buildKeyboardTexture();
   const deckMat = new THREE.MeshStandardMaterial({
     map: deckTexture,
@@ -134,7 +134,7 @@ export function createLaptop(videoEl) {
   hinge.position.set(0, -0.55 + baseThickness / 2 - 0.01, -depth / 2 + 0.06);
   group.add(hinge);
 
-  // ---- Lid group (pivots at the hinge) ----
+  // ---- Lid group ----
   const lidPivot = new THREE.Group();
   lidPivot.position.set(0, -0.55 + baseThickness / 2, -depth / 2 + 0.06);
   group.add(lidPivot);
@@ -144,43 +144,36 @@ export function createLaptop(videoEl) {
   lid.position.set(0, lidHeight / 2, -lidThickness / 2);
   lidPivot.add(lid);
 
-  // Screen bezel: slightly larger than the video plane, sunk a hair behind
-  // it, so the video reads as an inset panel rather than a face pasted on
-  // the front of the lid.
+  // Screen bezel
   const bezelGeo = new THREE.PlaneGeometry(width - 0.16, lidHeight - 0.16);
   const bezelMat = new THREE.MeshStandardMaterial({ color: 0x030303, roughness: 0.6 });
   const bezel = new THREE.Mesh(bezelGeo, bezelMat);
   bezel.position.set(0, lidHeight / 2, 0.008);
   lidPivot.add(bezel);
 
-  // Screen face (video texture)
-  const { material: screenMat, usingVideo } = buildScreenMaterial(videoEl);
+  // Screen face with texture
+  const { material: screenMat, usingImage } = buildScreenMaterial(imageOrVideoEl);
   const screenGeo = new THREE.PlaneGeometry(width - 0.32, lidHeight - 0.3);
   const screen = new THREE.Mesh(screenGeo, screenMat);
   screen.position.set(0, lidHeight / 2, 0.01);
   lidPivot.add(screen);
 
-  // Thin camera notch for realism
+  // Thin camera notch
   const notchGeo = new THREE.CircleGeometry(0.02, 12);
   const notchMat = new THREE.MeshStandardMaterial({ color: 0x000000, roughness: 0.9 });
   const notch = new THREE.Mesh(notchGeo, notchMat);
   notch.position.set(0, lidHeight - 0.1, 0.009);
   lidPivot.add(notch);
 
-  // Hinge math: at rotation.x = 0 the lid stands straight up (screen vertical,
-  // facing the camera). Positive rotation folds it CLOSED (forward, flat onto
-  // the base at +90°). A small NEGATIVE angle tilts the screen back slightly
-  // past vertical — the natural "in-use" laptop pose, and it also angles the
-  // screen's normal upward toward a camera positioned above the object.
+  // Hinge math: screen tilted back slightly past vertical
   lidPivot.rotation.x = THREE.MathUtils.degToRad(-10);
 
-  // Tilt + yaw the whole assembly for a 3/4 product-shot angle instead of a
-  // flat-on view — lets the camera read it as a 3D object, not a flat card.
+  // Tilt + yaw the whole assembly for a 3/4 product-shot angle
   group.rotation.x = THREE.MathUtils.degToRad(10);
   group.rotation.y = THREE.MathUtils.degToRad(-20);
 
   group.userData.screen = screen;
-  group.userData.usingVideo = usingVideo;
+  group.userData.usingImage = usingImage;
 
   return group;
 }
