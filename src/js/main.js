@@ -1,11 +1,21 @@
-// src/main.js
+// src\js\main.js
 import '../styles/main.css';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { loadSection } from './section-loader.js';
 import * as THREE from 'three';
+import { animateServices } from './animations/services.js';
 
 gsap.registerPlugin(ScrollTrigger);
+
+let smoother = null;
+
+function refreshScroll() {
+  if (smoother) {
+    smoother.refresh();
+  }
+  ScrollTrigger.refresh();
+}
 
 // ── SECTION LOADER ──
 async function init() {
@@ -15,12 +25,19 @@ async function init() {
   // Load remaining sections
   const sections = [
     { path: '/src/sections/about.html', id: 'section-about' },
-    { path: '/src/sections/services.html', id: 'section-services' },
+    { path: '/src/sections/services.html', id: 'section-services', animate: animateServices },
     { path: '/src/sections/contact.html', id: 'section-contact' },
   ];
 
   for (const section of sections) {
-    await loadSection(section.path, section.id);
+    const loaded = await loadSection(section.path, section.id);
+    if (loaded) {
+      // Only animate if the section has an animate function
+      if (section.animate) {
+        section.animate();
+      }
+      refreshScroll();
+    }
   }
 
   // ── INITIALIZE 3D SCENE ──
