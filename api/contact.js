@@ -1,292 +1,26 @@
-// api/contact.js
+// api/contact.js - FIXED
 export const config = {
   runtime: 'edge',
 };
 
-const rateLimitMap = new Map();
-
-function checkRateLimit(ip) {
-  const now = Date.now();
-  const windowMs = 15 * 60 * 1000;
-  const maxRequests = 5;
-
-  const userRequests = rateLimitMap.get(ip) || [];
-  const recentRequests = userRequests.filter(time => now - time < windowMs);
-
-  if (recentRequests.length >= maxRequests) {
-    return false;
-  }
-
-  recentRequests.push(now);
-  rateLimitMap.set(ip, recentRequests);
-  return true;
-}
-
-function sanitize(str) {
-  if (!str) return '';
-  return str
-    .replace(/&/g, '&amp;')
-    .replace(/</g, '&lt;')
-    .replace(/>/g, '&gt;')
-    .replace(/"/g, '&quot;')
-    .replace(/'/g, '&#x27;')
-    .replace(/\//g, '&#x2F;');
-}
-
-function isValidEmail(email) {
-  const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-  return emailRegex.test(email);
-}
-
-function generateEmailHTML(name, email, message, ip, userAgent, timestamp) {
-  const sanitizedName = sanitize(name);
-  const sanitizedEmail = sanitize(email);
-  const sanitizedMessage = sanitize(message);
-  const sanitizedIP = sanitize(ip);
-  const sanitizedUA = sanitize(userAgent);
-
-  return `
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-</head>
-<body style="margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; background-color: #0a0a0a; color: #e5e5e5;">
-  
-  <table cellpadding="0" cellspacing="0" border="0" width="100%" style="background-color: #0a0a0a; padding: 40px 20px;">
-    <tr>
-      <td align="center">
-        
-        <table cellpadding="0" cellspacing="0" border="0" width="100%" style="max-width: 600px; background: linear-gradient(145deg, #1a1a1a, #111111); border: 1px solid #2a2a2a; border-radius: 16px; overflow: hidden; box-shadow: 0 20px 60px rgba(0,0,0,0.5);">
-          
-          <tr>
-            <td style="padding: 40px 40px 30px; text-align: center; border-bottom: 1px solid #2a2a2a;">
-              <h1 style="margin: 0 0 8px; font-size: 28px; font-weight: 700; color: #ffffff; letter-spacing: -0.5px;">
-                📬 New Contact Form Submission
-              </h1>
-              <p style="margin: 0; font-size: 14px; color: #888888;">
-                Received on ${timestamp}
-              </p>
-            </td>
-          </tr>
-          
-          <tr>
-            <td style="padding: 40px;">
-              
-              <table cellpadding="0" cellspacing="0" border="0" width="100%" style="background-color: #1a1a1a; border: 1px solid #2a2a2a; border-radius: 12px; margin-bottom: 30px;">
-                <tr>
-                  <td style="padding: 24px;">
-                    
-                    <table cellpadding="0" cellspacing="0" border="0" width="100%" style="margin-bottom: 20px;">
-                      <tr>
-                        <td style="padding-bottom: 6px;">
-                          <span style="font-size: 11px; text-transform: uppercase; letter-spacing: 1px; color: #666666; font-weight: 600;">👤 Name</span>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          <span style="font-size: 16px; color: #ffffff; font-weight: 500;">${sanitizedName}</span>
-                        </td>
-                      </tr>
-                    </table>
-                    
-                    <table cellpadding="0" cellspacing="0" border="0" width="100%" style="margin-bottom: 20px;">
-                      <tr>
-                        <td style="padding-bottom: 6px;">
-                          <span style="font-size: 11px; text-transform: uppercase; letter-spacing: 1px; color: #666666; font-weight: 600;">✉️ Email</span>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          <a href="mailto:${sanitizedEmail}" style="font-size: 16px; color: #60a5fa; text-decoration: none; font-weight: 500; border-bottom: 1px solid #60a5fa20; padding-bottom: 2px;">
-                            ${sanitizedEmail}
-                          </a>
-                        </td>
-                      </tr>
-                    </table>
-                    
-                    <table cellpadding="0" cellspacing="0" border="0" width="100%">
-                      <tr>
-                        <td style="padding-bottom: 6px;">
-                          <span style="font-size: 11px; text-transform: uppercase; letter-spacing: 1px; color: #666666; font-weight: 600;">💬 Message</span>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          <table cellpadding="0" cellspacing="0" border="0" width="100%" style="background-color: #0a0a0a; border: 1px solid #2a2a2a; border-radius: 8px;">
-                            <tr>
-                              <td style="padding: 20px; font-size: 15px; color: #d4d4d4; line-height: 1.6; white-space: pre-wrap;">
-                                ${sanitizedMessage}
-                              </td>
-                            </tr>
-                          </table>
-                        </td>
-                      </tr>
-                    </table>
-                    
-                  </td>
-                </tr>
-              </table>
-              
-              <table cellpadding="0" cellspacing="0" border="0" width="100%" style="background-color: #0a0a0a; border: 1px solid #1a1a1a; border-radius: 8px;">
-                <tr>
-                  <td style="padding: 16px 20px;">
-                    <table cellpadding="0" cellspacing="0" border="0" width="100%">
-                      <tr>
-                        <td style="padding-bottom: 8px;">
-                          <span style="font-size: 11px; color: #666666;">🌐 IP Address: <span style="color: #888888;">${sanitizedIP}</span></span>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          <span style="font-size: 11px; color: #666666;">🖥️ User Agent: <span style="color: #888888; word-break: break-all;">${sanitizedUA}</span></span>
-                        </td>
-                      </tr>
-                    </table>
-                  </td>
-                </tr>
-              </table>
-              
-            </td>
-          </tr>
-          
-          <tr>
-            <td style="padding: 24px 40px; text-align: center; border-top: 1px solid #2a2a2a; background-color: #0a0a0a;">
-              <p style="margin: 0; font-size: 12px; color: #555555;">
-                This email was sent from your website contact form.
-                <br>
-                <span style="color: #444444;">iProcessPH © ${new Date().getFullYear()}</span>
-              </p>
-            </td>
-          </tr>
-          
-        </table>
-        
-      </td>
-    </tr>
-  </table>
-  
-</body>
-</html>`;
-}
-
 export default async function handler(req) {
-  // CORS preflight
-  if (req.method === 'OPTIONS') {
-    return new Response(null, {
-      headers: {
-        'Access-Control-Allow-Origin': '*',
-        'Access-Control-Allow-Methods': 'POST',
-        'Access-Control-Allow-Headers': 'Content-Type'
-      }
-    });
-  }
-
   if (req.method !== 'POST') {
     return new Response(JSON.stringify({ error: 'Method not allowed' }), {
       status: 405,
-      headers: { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*' }
-    });
-  }
-
-  const ip = req.headers.get('x-forwarded-for') || req.headers.get('x-real-ip') || 'Unknown';
-  const userAgent = req.headers.get('user-agent') || 'Unknown';
-
-  // Rate limiting
-  if (!checkRateLimit(ip)) {
-    return new Response(JSON.stringify({
-      error: 'Too many submissions. Please try again in 15 minutes.'
-    }), {
-      status: 429,
       headers: { 'Content-Type': 'application/json' }
     });
   }
 
   try {
-    const body = await req.json();
-    const { name, email, message, website } = body; // ✅ Extract website
+    const { name, email, message } = await req.json();
 
-    // ✅ HONEYPOT CHECK - MUST BE FIRST (before anything else)
-    if (website) {
-      console.log('🤖 Honeypot triggered - bot submission blocked');
-      return new Response(JSON.stringify({ success: true, message: 'Message sent successfully!' }), {
-        status: 200,
-        headers: { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*' }
-      });
-    }
-
-    // Input validation
-    const errors = [];
-
-    if (!name || typeof name !== 'string' || name.trim().length === 0) {
-      errors.push('Name is required');
-    } else if (name.trim().length > 100) {
-      errors.push('Name must be less than 100 characters');
-    }
-
-    if (!email || typeof email !== 'string' || email.trim().length === 0) {
-      errors.push('Email is required');
-    } else if (!isValidEmail(email)) {
-      errors.push('Please enter a valid email address');
-    } else if (email.length > 254) {
-      errors.push('Email must be less than 254 characters');
-    }
-
-    if (!message || typeof message !== 'string' || message.trim().length === 0) {
-      errors.push('Message is required');
-    } else if (message.trim().length > 5000) {
-      errors.push('Message must be less than 5000 characters');
-    }
-
-    // Block common spam patterns
-    const spamPatterns = [
-      /<a\s+href=/i,
-      /\[url=/i,
-      /viagra/i,
-      /casino/i,
-      /crypto.*investment/i,
-      /buy.*followers/i,
-    ];
-
-    const fullContent = `${name} ${email} ${message}`.toLowerCase();
-    if (spamPatterns.some(pattern => pattern.test(fullContent))) {
-      return new Response(JSON.stringify({ error: 'Message flagged as spam' }), {
-        status: 400,
-        headers: { 'Content-Type': 'application/json' }
-      });
-    }
-
-    if (errors.length > 0) {
-      return new Response(JSON.stringify({ error: errors.join('. ') }), {
-        status: 400,
-        headers: { 'Content-Type': 'application/json' }
-      });
-    }
-
+    // ✅ Use process.env directly (it actually works in Vercel Edge)
+    // But to be safe, you can also use:
     const RESEND_API_KEY = process.env.RESEND_API_KEY;
+
     if (!RESEND_API_KEY) {
-      throw new Error('Server configuration error');
+      throw new Error('Missing API key');
     }
-
-    const timestamp = new Date().toLocaleString('en-US', {
-      weekday: 'long',
-      year: 'numeric',
-      month: 'long',
-      day: 'numeric',
-      hour: '2-digit',
-      minute: '2-digit',
-      timeZoneName: 'short'
-    });
-
-    const emailHTML = generateEmailHTML(
-      name.trim(),
-      email.trim().toLowerCase(),
-      message.trim(),
-      ip,
-      userAgent,
-      timestamp
-    );
 
     const response = await fetch('https://api.resend.com/emails', {
       method: 'POST',
@@ -295,36 +29,27 @@ export default async function handler(req) {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({
-        from: 'iProcessPH Contact <onboarding@resend.dev>',
+        from: 'onboarding@resend.dev',
         to: 'markryanzipagan3@gmail.com',
-        reply_to: email.trim().toLowerCase(),
-        subject: `💼 New Inquiry from ${name.trim()} - iProcessPH`,
-        html: emailHTML,
-        text: `New Contact Form Submission\n\nName: ${name}\nEmail: ${email}\nMessage: ${message}\n\n---\nIP: ${ip}\nUser Agent: ${userAgent}\nTime: ${timestamp}`
+        subject: `New message from ${name}`,
+        html: `<p>From: ${name} (${email})</p><p>${message}</p>`
       })
     });
 
     if (!response.ok) {
       const errorData = await response.json();
-      console.error('Resend API error:', errorData);
-      throw new Error('Failed to send email');
+      throw new Error(errorData.message || 'Email sending failed');
     }
 
-    return new Response(JSON.stringify({
-      success: true,
-      message: 'Message sent successfully!'
-    }), {
+    return new Response(JSON.stringify({ success: true }), {
       status: 200,
-      headers: { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*' }
+      headers: { 'Content-Type': 'application/json' }
     });
 
   } catch (error) {
-    console.error('Contact form error:', error);
-    return new Response(JSON.stringify({
-      error: 'Failed to send message. Please try again later.'
-    }), {
+    return new Response(JSON.stringify({ error: error.message }), {
       status: 500,
-      headers: { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*' }
+      headers: { 'Content-Type': 'application/json' }
     });
   }
 }
