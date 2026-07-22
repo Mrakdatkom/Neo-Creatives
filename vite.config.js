@@ -21,4 +21,5 @@ export default defineConfig({
     copyPublicDir: true,
   },
   publicDir: 'public',
+  assetsInclude: ['**/*.html', '**/*.gltf', '**/*.glb', '**/*.png', '**/*.jpg', '**/*.svg'],
 });
