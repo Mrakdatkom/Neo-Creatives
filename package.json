@@ -5,8 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "npx vite",
-    "build": "npx vite build && npm run copy-assets",
-    "copy-assets": "xcopy /E /I public\\sections dist\\sections && xcopy /E /I public\\models dist\\models",
+    "build": "npx vite build",
     "preview": "npx vite preview"
   },
   "devDependencies": {

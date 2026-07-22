@@ -75,7 +75,6 @@ async function init() {
 async function initThreeScene() {
   try {
     const { setupScene } = await import('../three/setupScene.js');
-    const { GLTFLoader } = await import('three/examples/jsm/loaders/GLTFLoader.js');
     const { createLaptop } = await import('../three/createLaptop.js');
 
     const stage = document.getElementById('canvas-stage');
@@ -89,76 +88,17 @@ async function initThreeScene() {
     console.log('✅ Canvas stage found, initializing Three.js...');
 
     const { scene, camera, renderer } = setupScene(stage);
-    const loader = new GLTFLoader();
     let laptop;
-    let modelLoaded = false;
 
     // Try loading the GLTF model
-    loader.load(
-      '/models/laptop.gltf',
-      (gltf) => {
-        try {
-          laptop = gltf.scene;
-          const screenMesh = laptop.getObjectByName('Screen') ||
-            laptop.getObjectByName('screen') ||
-            laptop.getObjectByName('Display');
-
-          if (screenMesh && imageEl) {
-            const texture = new THREE.Texture(imageEl);
-            texture.colorSpace = THREE.SRGBColorSpace;
-
-            if (imageEl.complete) {
-              texture.needsUpdate = true;
-            } else {
-              imageEl.onload = () => {
-                texture.needsUpdate = true;
-                screenMesh.material.map = texture;
-                screenMesh.material.needsUpdate = true;
-              };
-            }
-
-            screenMesh.material = new THREE.MeshBasicMaterial({
-              map: texture,
-              color: 0xffffff,
-            });
-            laptop.userData.screen = screenMesh;
-          }
-
-          laptop.scale.setScalar(0.9);
-          laptop.position.set(0, 0.1, 0);
-          laptop.rotation.x = THREE.MathUtils.degToRad(10);
-          laptop.rotation.y = THREE.MathUtils.degToRad(-20);
-
-          scene.add(laptop);
-          setupLaptopAnimations(laptop, camera);
-          modelLoaded = true;
-          console.log('✅ Laptop model loaded successfully!');
-        } catch (err) {
-          console.warn('Error processing GLTF model:', err);
-          useFallbackLaptop();
-        }
-      },
-      (progress) => {
-        // Progress callback
-        console.log(`Loading model: ${Math.round((progress.loaded / progress.total) * 100)}%`);
-      },
-      (error) => {
-        console.warn('Error loading laptop model:', error);
-        useFallbackLaptop();
-      }
-    );
-
-    function useFallbackLaptop() {
-      if (modelLoaded) return;
-      if (imageEl) {
-        const fallbackLaptop = createLaptop(imageEl);
-        laptop = fallbackLaptop;
-        laptop.scale.setScalar(0.9);
-        laptop.position.set(0, 0.1, 0);
-        scene.add(laptop);
-        setupLaptopAnimations(laptop, camera);
-        console.log('✅ Using fallback procedural laptop');
-      }
+    if (imageEl) {
+      const fallbackLaptop = createLaptop(imageEl);
+      laptop = fallbackLaptop;
+      laptop.scale.setScalar(0.9);
+      laptop.position.set(0, 0.1, 0);
+      scene.add(laptop);
+      setupLaptopAnimations(laptop, camera);
+      console.log('✅ Using procedural laptop');
     }
 
     function setupLaptopAnimations(laptop, camera) {
