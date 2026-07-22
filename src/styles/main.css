@@ -21,18 +21,59 @@ html {
 }
 
 .web-infra {
-  font-size: 300px;
+  font-size: clamp(2.5rem, 12vw, 4.5rem);
+  /* mobile/tablet fluid size */
   text-align: start;
   transform-origin: top left;
   will-change: transform;
 }
 
+@media (min-width: 768px) {
+  .web-infra {
+    font-size: 300px;
+    /* your original desktop size, untouched */
+  }
+}
+
+/* --- Card flip mechanics --- */
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+.card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+.group:hover .card-inner {
+  transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+.card-back {
+  transform: rotateY(180deg);
+}
+
 .service-group {
   height: 100vh;
-  /* exact, not min-height */
   overflow: hidden;
-  /* prevents any content from pushing the box taller */
   background: transparent;
+}
+
+@media (max-width: 767px) {
+  .service-group {
+    height: auto;
+    min-height: 100vh;
+    overflow: visible;
+  }
 }
 
 .service-card {
@@ -41,9 +82,14 @@ html {
 
 .services-header {
   z-index: 50;
-  /* higher than any .service-group content (which uses z-10/z-20) */
   pointer-events: none;
-  /* stays purely visual, doesn't block clicks on cards below */
+}
+
+@media (max-width: 767px) {
+  .services-header {
+    position: relative;
+    padding-top: 2rem;
+  }
 }
 
 body {
