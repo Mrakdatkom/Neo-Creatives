@@ -71,7 +71,6 @@ async function init() {
 }
 
 // ── 3D SCENE SETUP ──
-// In main.js - Updated Three.js loading with better error handling
 async function initThreeScene() {
   try {
     const { setupScene } = await import('../three/setupScene.js');
@@ -210,6 +209,107 @@ function setupAnimations() {
     console.warn('Error setting up animations:', error);
   }
 }
+
+// Handle contact form (use event delegation since it might load dynamically)
+document.addEventListener('submit', async (e) => {
+  // Only handle our contact form
+  if (!e.target.matches('#contact-form')) return;
+
+  console.log('📝 Form submission detected!');
+  e.preventDefault();
+
+  const form = e.target;
+  const submitBtn = form.querySelector('button[type="submit"]');
+  const successMsg = document.getElementById('success-message');
+  const errorMsg = document.getElementById('error-message');
+
+  console.log('Form elements:', {
+    submitBtn: !!submitBtn,
+    successMsg: !!successMsg,
+    errorMsg: !!errorMsg
+  });
+
+  // Disable button
+  submitBtn.disabled = true;
+  submitBtn.textContent = 'Sending...';
+
+  const formData = new FormData(form);
+  const data = Object.fromEntries(formData);
+
+  console.log('📤 Sending data:', data);
+
+  try {
+    const response = await fetch('/api/contact', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data)
+    });
+
+    console.log('📨 Response status:', response.status);
+    const result = await response.json();
+    console.log('📨 Response data:', result);
+
+    if (response.ok) {
+      form.reset();
+
+      // Success animation
+      if (successMsg) {
+        successMsg.classList.remove('hidden');
+        gsap.set(successMsg, { opacity: 0, y: 20 }); // Set initial state
+        gsap.to(successMsg, {
+          opacity: 1,
+          y: 0,
+          duration: 0.5,
+          ease: 'power2.out'
+        });
+        console.log('✅ Success message shown');
+      }
+
+      // Auto-hide after 5 seconds
+      setTimeout(() => {
+        if (successMsg) {
+          gsap.to(successMsg, {
+            opacity: 0,
+            y: -10,
+            duration: 0.3,
+            onComplete: () => successMsg.classList.add('hidden')
+          });
+        }
+      }, 5000);
+
+    } else {
+      // Show error
+      if (errorMsg) {
+        errorMsg.textContent = result.error || 'Something went wrong';
+        errorMsg.classList.remove('hidden');
+        gsap.set(errorMsg, { opacity: 0, y: 20 });
+        gsap.to(errorMsg, {
+          opacity: 1,
+          y: 0,
+          duration: 0.5,
+          ease: 'power2.out'
+        });
+      }
+      console.error('❌ Server error:', result.error);
+    }
+  } catch (error) {
+    console.error('❌ Submission failed:', error);
+    if (errorMsg) {
+      errorMsg.textContent = 'Network error. Please try again.';
+      errorMsg.classList.remove('hidden');
+      gsap.set(errorMsg, { opacity: 0, y: 20 });
+      gsap.to(errorMsg, {
+        opacity: 1,
+        y: 0,
+        duration: 0.5,
+        ease: 'power2.out'
+      });
+    }
+  } finally {
+    submitBtn.disabled = false;
+    submitBtn.textContent = 'Send Message';
+  }
+});
 
 // ── START ──
 document.addEventListener('DOMContentLoaded', init);

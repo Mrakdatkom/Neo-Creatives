@@ -1,13 +1,38 @@
-<!-- src/sections/contact.html -->
 <section id="contact" class="min-h-screen bg-ink/90 flex items-center justify-center px-6 py-12">
   <div class="max-w-4xl mx-auto text-center">
     <h2 class="font-display text-4xl md:text-6xl text-white/80 mb-6">Let's Work Together</h2>
     <p class="font-body text-bone/60 text-sm md:text-base max-w-2xl mx-auto mb-10">
       Ready to bring your vision to life? Get in touch with us today.
     </p>
-    <a href="mailto:hello@neocreatives.com"
-      class="inline-block px-10 py-4 border border-white/20 hover:border-white/60 text-white/80 hover:text-white transition-all duration-300 font-body text-sm tracking-wider uppercase">
-      Get in Touch
-    </a>
+
+    <form id="contact-form" class="space-y-6 max-w-md mx-auto">
+      <div>
+        <input type="text" name="name" required
+          class="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg text-white placeholder-white/40 focus:outline-none focus:border-white/30 transition"
+          placeholder="Your Name">
+      </div>
+      <div>
+        <input type="email" name="email" required
+          class="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg text-white placeholder-white/40 focus:outline-none focus:border-white/30 transition"
+          placeholder="Your Email">
+      </div>
+      <div>
+        <textarea name="message" required rows="4"
+          class="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg text-white placeholder-white/40 focus:outline-none focus:border-white/30 transition resize-none"
+          placeholder="Your Message"></textarea>
+      </div>
+      <button type="submit"
+        class="w-full px-8 py-3 bg-white/10 hover:bg-white/20 text-white font-body rounded-lg transition-all duration-300 border border-white/10">
+        Send Message
+      </button>
+    </form>
+
+    <!-- Success/Error Messages - REMOVED opacity-0 and translate-y-4 -->
+    <div id="success-message" class="hidden mt-6 text-green-400 font-body">
+      ✓ Message sent successfully! We'll get back to you soon.
+    </div>
+    <div id="error-message" class="hidden mt-6 text-red-400 font-body">
+      ✗ Something went wrong. Please try again.
+    </div>
   </div>
 </section>
