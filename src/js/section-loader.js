@@ -1,16 +1,22 @@
 // src/js/section-loader.js
-
-export async function loadSection(sectionPath, targetId) {
-  const target = document.getElementById(targetId);
-  if (!target) return false;
+export async function loadSection(path, containerId) {
+  const container = document.getElementById(containerId);
+  if (!container) {
+    console.warn(`Container #${containerId} not found`);
+    return false;
+  }
 
   try {
-    const res = await fetch(sectionPath);
-    const html = await res.text();
-    target.innerHTML = html;
+    const response = await fetch(path);
+    if (!response.ok) {
+      throw new Error(`Failed to load ${path}: ${response.status}`);
+    }
+    const html = await response.text();
+    container.innerHTML = html;
+    console.log(`✅ Loaded ${path} into #${containerId}`);
     return true;
-  } catch (err) {
-    console.warn(`Could not load section "${sectionPath}":`, err);
+  } catch (error) {
+    console.error(`Error loading ${path}:`, error);
     return false;
   }
 }

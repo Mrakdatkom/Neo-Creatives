@@ -1,0 +1,2594 @@
+Folder PATH listing for volume Windows X-Lite
+Volume serial number is 00000007 C045:3146
+C:.
+|   .gitignore
+|   folder_structure.txt
+|   index.html
+|   package-lock.json
+|   package.json
+|   README.md
+|   vercel.json
+|   vite.config.js
+|   
++---dist
+|   |   favicon.svg
+|   |   index.html
+|   |   
+|   +---assets
+|   |       createLaptop-BqbpPrU4.js
+|   |       GLTFLoader-DRmCaCke.js
+|   |       index-B1eEnuwK.css
+|   |       index-BoRFnQcl.js
+|   |       laptop-photo-lbBzfLdr.png
+|   |       setupScene-CSRwLLF1.js
+|   |       three.core-DCb7Pdmt.js
+|   |       
+|   \---models
+|           laptop.glb
+|           laptop.gltf
+|           
++---node_modules
+|   |   .package-lock.json
+|   |   
+|   +---.bin
+|   |       jiti
+|   |       jiti.cmd
+|   |       jiti.ps1
+|   |       nanoid
+|   |       nanoid.cmd
+|   |       nanoid.ps1
+|   |       rolldown
+|   |       rolldown.cmd
+|   |       rolldown.ps1
+|   |       vite
+|   |       vite.cmd
+|   |       vite.ps1
+|   |       
+|   +---.vite
+|   |   \---deps
+|   |           gsap.js
+|   |           gsap.js.map
+|   |           gsap_ScrollSmoother.js
+|   |           gsap_ScrollSmoother.js.map
+|   |           gsap_ScrollTrigger.js
+|   |           gsap_ScrollTrigger.js.map
+|   |           package.json
+|   |           three.js
+|   |           three.module-BKY27AXr.js
+|   |           three.module-BKY27AXr.js.map
+|   |           three_examples_jsm_environments_RoomEnvironment__js.js
+|   |           three_examples_jsm_environments_RoomEnvironment__js.js.map
+|   |           three_examples_jsm_geometries_RoundedBoxGeometry__js.js
+|   |           three_examples_jsm_geometries_RoundedBoxGeometry__js.js.map
+|   |           three_examples_jsm_loaders_GLTFLoader__js.js
+|   |           three_examples_jsm_loaders_GLTFLoader__js.js.map
+|   |           _metadata.json
+|   |           
+|   +---.vite-temp
+|   +---@emnapi
+|   |   +---core
+|   |   |   |   index.js
+|   |   |   |   LICENSE
+|   |   |   |   package.json
+|   |   |   |   README.md
+|   |   |   |   
+|   |   |   \---dist
+|   |   |           emnapi-core.cjs.js
+|   |   |           emnapi-core.cjs.min.d.ts
+|   |   |           emnapi-core.cjs.min.js
+|   |   |           emnapi-core.d.mts
+|   |   |           emnapi-core.d.ts
+|   |   |           emnapi-core.esm-bundler.js
+|   |   |           emnapi-core.js
+|   |   |           emnapi-core.min.d.mts
+|   |   |           emnapi-core.min.js
+|   |   |           emnapi-core.min.mjs
+|   |   |           emnapi-core.mjs
+|   |   |           
+|   |   +---runtime
+|   |   |   |   index.js
+|   |   |   |   LICENSE
+|   |   |   |   package.json
+|   |   |   |   README.md
+|   |   |   |   
+|   |   |   \---dist
+|   |   |           emnapi.cjs.js
+|   |   |           emnapi.cjs.min.d.ts
+|   |   |           emnapi.cjs.min.js
+|   |   |           emnapi.d.mts
+|   |   |           emnapi.d.ts
+|   |   |           emnapi.esm-bundler.js
+|   |   |           emnapi.iife.d.ts
+|   |   |           emnapi.iife.js
+|   |   |           emnapi.js
+|   |   |           emnapi.min.d.mts
+|   |   |           emnapi.min.js
+|   |   |           emnapi.min.mjs
+|   |   |           emnapi.mjs
+|   |   |           
+|   |   \---wasi-threads
+|   |       |   index.js
+|   |       |   LICENSE
+|   |       |   package.json
+|   |       |   README.md
+|   |       |   
+|   |       \---dist
+|   |               wasi-threads.cjs.js
+|   |               wasi-threads.cjs.min.d.ts
+|   |               wasi-threads.cjs.min.js
+|   |               wasi-threads.d.mts
+|   |               wasi-threads.d.ts
+|   |               wasi-threads.esm-bundler.js
+|   |               wasi-threads.js
+|   |               wasi-threads.min.d.mts
+|   |               wasi-threads.min.js
+|   |               wasi-threads.min.mjs
+|   |               wasi-threads.mjs
+|   |               
+|   +---@jridgewell
+|   |   +---gen-mapping
+|   |   |   |   LICENSE
+|   |   |   |   package.json
+|   |   |   |   README.md
+|   |   |   |   
+|   |   |   +---dist
+|   |   |   |   |   gen-mapping.mjs
+|   |   |   |   |   gen-mapping.mjs.map
+|   |   |   |   |   gen-mapping.umd.js
+|   |   |   |   |   gen-mapping.umd.js.map
+|   |   |   |   |   
+|   |   |   |   \---types
+|   |   |   |           gen-mapping.d.ts
+|   |   |   |           set-array.d.ts
+|   |   |   |           sourcemap-segment.d.ts
+|   |   |   |           types.d.ts
+|   |   |   |           
+|   |   |   +---src
+|   |   |   |       gen-mapping.ts
+|   |   |   |       set-array.ts
+|   |   |   |       sourcemap-segment.ts
+|   |   |   |       types.ts
+|   |   |   |       
+|   |   |   \---types
+|   |   |           gen-mapping.d.cts
+|   |   |           gen-mapping.d.cts.map
+|   |   |           gen-mapping.d.mts
+|   |   |           gen-mapping.d.mts.map
+|   |   |           set-array.d.cts
+|   |   |           set-array.d.cts.map
+|   |   |           set-array.d.mts
+|   |   |           set-array.d.mts.map
+|   |   |           sourcemap-segment.d.cts
+|   |   |           sourcemap-segment.d.cts.map
+|   |   |           sourcemap-segment.d.mts
+|   |   |           sourcemap-segment.d.mts.map
+|   |   |           types.d.cts
+|   |   |           types.d.cts.map
+|   |   |           types.d.mts
+|   |   |           types.d.mts.map
+|   |   |           
+|   |   +---remapping
+|   |   |   |   LICENSE
+|   |   |   |   package.json
+|   |   |   |   README.md
+|   |   |   |   
+|   |   |   +---dist
+|   |   |   |       remapping.mjs
+|   |   |   |       remapping.mjs.map
+|   |   |   |       remapping.umd.js
+|   |   |   |       remapping.umd.js.map
+|   |   |   |       
+|   |   |   +---src
+|   |   |   |       build-source-map-tree.ts
+|   |   |   |       remapping.ts
+|   |   |   |       source-map-tree.ts
+|   |   |   |       source-map.ts
+|   |   |   |       types.ts
+|   |   |   |       
+|   |   |   \---types
+|   |   |           build-source-map-tree.d.cts
+|   |   |           build-source-map-tree.d.cts.map
+|   |   |           build-source-map-tree.d.mts
+|   |   |           build-source-map-tree.d.mts.map
+|   |   |           remapping.d.cts
+|   |   |           remapping.d.cts.map
+|   |   |           remapping.d.mts
+|   |   |           remapping.d.mts.map
+|   |   |           source-map-tree.d.cts
+|   |   |           source-map-tree.d.cts.map
+|   |   |           source-map-tree.d.mts
+|   |   |           source-map-tree.d.mts.map
+|   |   |           source-map.d.cts
+|   |   |           source-map.d.cts.map
+|   |   |           source-map.d.mts
+|   |   |           source-map.d.mts.map
+|   |   |           types.d.cts
+|   |   |           types.d.cts.map
+|   |   |           types.d.mts
+|   |   |           types.d.mts.map
+|   |   |           
+|   |   +---resolve-uri
+|   |   |   |   LICENSE
+|   |   |   |   package.json
+|   |   |   |   README.md
+|   |   |   |   
+|   |   |   \---dist
+|   |   |       |   resolve-uri.mjs
+|   |   |       |   resolve-uri.mjs.map
+|   |   |       |   resolve-uri.umd.js
+|   |   |       |   resolve-uri.umd.js.map
+|   |   |       |   
+|   |   |       \---types
+|   |   |               resolve-uri.d.ts
+|   |   |               
+|   |   +---sourcemap-codec
+|   |   |   |   LICENSE
+|   |   |   |   package.json
+|   |   |   |   README.md
+|   |   |   |   
+|   |   |   +---dist
+|   |   |   |       sourcemap-codec.mjs
+|   |   |   |       sourcemap-codec.mjs.map
+|   |   |   |       sourcemap-codec.umd.js
+|   |   |   |       sourcemap-codec.umd.js.map
+|   |   |   |       
+|   |   |   +---src
+|   |   |   |       scopes.ts
+|   |   |   |       sourcemap-codec.ts
+|   |   |   |       strings.ts
+|   |   |   |       vlq.ts
+|   |   |   |       
+|   |   |   \---types
+|   |   |           scopes.d.cts
+|   |   |           scopes.d.cts.map
+|   |   |           scopes.d.mts
+|   |   |           scopes.d.mts.map
+|   |   |           sourcemap-codec.d.cts
+|   |   |           sourcemap-codec.d.cts.map
+|   |   |           sourcemap-codec.d.mts
+|   |   |           sourcemap-codec.d.mts.map
+|   |   |           strings.d.cts
+|   |   |           strings.d.cts.map
+|   |   |           strings.d.mts
+|   |   |           strings.d.mts.map
+|   |   |           vlq.d.cts
+|   |   |           vlq.d.cts.map
+|   |   |           vlq.d.mts
+|   |   |           vlq.d.mts.map
+|   |   |           
+|   |   \---trace-mapping
+|   |       |   LICENSE
+|   |       |   package.json
+|   |       |   README.md
+|   |       |   
+|   |       +---dist
+|   |       |       trace-mapping.mjs
+|   |       |       trace-mapping.mjs.map
+|   |       |       trace-mapping.umd.js
+|   |       |       trace-mapping.umd.js.map
+|   |       |       
+|   |       +---src
+|   |       |       binary-search.ts
+|   |       |       by-source.ts
+|   |       |       flatten-map.ts
+|   |       |       resolve.ts
+|   |       |       sort.ts
+|   |       |       sourcemap-segment.ts
+|   |       |       strip-filename.ts
+|   |       |       trace-mapping.ts
+|   |       |       types.ts
+|   |       |       
+|   |       \---types
+|   |               binary-search.d.cts
+|   |               binary-search.d.cts.map
+|   |               binary-search.d.mts
+|   |               binary-search.d.mts.map
+|   |               by-source.d.cts
+|   |               by-source.d.cts.map
+|   |               by-source.d.mts
+|   |               by-source.d.mts.map
+|   |               flatten-map.d.cts
+|   |               flatten-map.d.cts.map
+|   |               flatten-map.d.mts
+|   |               flatten-map.d.mts.map
+|   |               resolve.d.cts
+|   |               resolve.d.cts.map
+|   |               resolve.d.mts
+|   |               resolve.d.mts.map
+|   |               sort.d.cts
+|   |               sort.d.cts.map
+|   |               sort.d.mts
+|   |               sort.d.mts.map
+|   |               sourcemap-segment.d.cts
+|   |               sourcemap-segment.d.cts.map
+|   |               sourcemap-segment.d.mts
+|   |               sourcemap-segment.d.mts.map
+|   |               strip-filename.d.cts
+|   |               strip-filename.d.cts.map
+|   |               strip-filename.d.mts
+|   |               strip-filename.d.mts.map
+|   |               trace-mapping.d.cts
+|   |               trace-mapping.d.cts.map
+|   |               trace-mapping.d.mts
+|   |               trace-mapping.d.mts.map
+|   |               types.d.cts
+|   |               types.d.cts.map
+|   |               types.d.mts
+|   |               types.d.mts.map
+|   |               
+|   +---@napi-rs
+|   |   \---wasm-runtime
+|   |       |   fs-proxy.js
+|   |       |   package.json
+|   |       |   runtime.cjs
+|   |       |   runtime.js
+|   |       |   
+|   |       \---dist
+|   |               fs-proxy.cjs
+|   |               fs.js
+|   |               
+|   +---@oxc-project
+|   |   \---types
+|   |           LICENSE
+|   |           package.json
+|   |           README.md
+|   |           types.d.ts
+|   |           
+|   +---@rolldown
+|   |   +---binding-win32-x64-msvc
+|   |   |       package.json
+|   |   |       README.md
+|   |   |       rolldown-binding.win32-x64-msvc.node
+|   |   |       
+|   |   \---pluginutils
+|   |       |   LICENSE
+|   |       |   package.json
+|   |       |   README.md
+|   |       |   
+|   |       \---dist
+|   |           |   filter-B_mD-HGz.mjs
+|   |           |   index.d.mts
+|   |           |   index.mjs
+|   |           |   
+|   |           \---filter
+|   |                   index.d.mts
+|   |                   index.mjs
+|   |                   
+|   +---@tailwindcss
+|   |   +---node
+|   |   |   |   LICENSE
+|   |   |   |   package.json
+|   |   |   |   README.md
+|   |   |   |   
+|   |   |   \---dist
+|   |   |           esm-cache.loader.d.mts
+|   |   |           esm-cache.loader.mjs
+|   |   |           index.d.mts
+|   |   |           index.d.ts
+|   |   |           index.js
+|   |   |           index.mjs
+|   |   |           require-cache.d.ts
+|   |   |           require-cache.js
+|   |   |           
+|   |   +---oxide
+|   |   |       index.d.ts
+|   |   |       index.js
+|   |   |       LICENSE
+|   |   |       package.json
+|   |   |       
+|   |   +---oxide-win32-x64-msvc
+|   |   |       LICENSE
+|   |   |       package.json
+|   |   |       README.md
+|   |   |       tailwindcss-oxide.win32-x64-msvc.node
+|   |   |       
+|   |   \---vite
+|   |       |   LICENSE
+|   |       |   package.json
+|   |       |   README.md
+|   |       |   
+|   |       \---dist
+|   |               index.d.mts
+|   |               index.mjs
+|   |               
+|   +---@tybys
+|   |   \---wasm-util
+|   |       |   package.json
+|   |       |   README.md
+|   |       |   
+|   |       +---dist
+|   |       |       tsdoc-metadata.json
+|   |       |       wasm-util.d.ts
+|   |       |       wasm-util.esm-bundler.js
+|   |       |       wasm-util.esm.js
+|   |       |       wasm-util.esm.min.js
+|   |       |       wasm-util.js
+|   |       |       wasm-util.min.js
+|   |       |       
+|   |       \---lib
+|   |           +---cjs
+|   |           |   |   asyncify.js
+|   |           |   |   index.js
+|   |           |   |   jspi.js
+|   |           |   |   load.js
+|   |           |   |   memory.js
+|   |           |   |   webassembly.js
+|   |           |   |   
+|   |           |   \---wasi
+|   |           |           error.js
+|   |           |           fd.js
+|   |           |           fs.js
+|   |           |           index.js
+|   |           |           path.js
+|   |           |           preview1.js
+|   |           |           rights.js
+|   |           |           types.js
+|   |           |           util.js
+|   |           |           
+|   |           \---mjs
+|   |               |   asyncify.mjs
+|   |               |   index.mjs
+|   |               |   jspi.mjs
+|   |               |   load.mjs
+|   |               |   memory.mjs
+|   |               |   webassembly.mjs
+|   |               |   
+|   |               \---wasi
+|   |                       error.mjs
+|   |                       fd.mjs
+|   |                       fs.mjs
+|   |                       index.mjs
+|   |                       path.mjs
+|   |                       preview1.mjs
+|   |                       rights.mjs
+|   |                       types.mjs
+|   |                       util.mjs
+|   |                       
+|   +---detect-libc
+|   |   |   index.d.ts
+|   |   |   LICENSE
+|   |   |   package.json
+|   |   |   README.md
+|   |   |   
+|   |   \---lib
+|   |           detect-libc.js
+|   |           elf.js
+|   |           filesystem.js
+|   |           process.js
+|   |           
+|   +---enhanced-resolve
+|   |   |   LICENSE
+|   |   |   package.json
+|   |   |   README.md
+|   |   |   types.d.ts
+|   |   |   
+|   |   \---lib
+|   |       |   AliasFieldPlugin.js
+|   |       |   AliasPlugin.js
+|   |       |   AliasUtils.js
+|   |       |   AppendPlugin.js
+|   |       |   CachedInputFileSystem.js
+|   |       |   CloneBasenamePlugin.js
+|   |       |   ConditionalPlugin.js
+|   |       |   createInnerContext.js
+|   |       |   DescriptionFilePlugin.js
+|   |       |   DescriptionFileUtils.js
+|   |       |   DirectoryExistsPlugin.js
+|   |       |   ExportsFieldPlugin.js
+|   |       |   ExtensionAliasPlugin.js
+|   |       |   FileExistsPlugin.js
+|   |       |   forEachBail.js
+|   |       |   getInnerRequest.js
+|   |       |   getPaths.js
+|   |       |   ImportsFieldPlugin.js
+|   |       |   index.js
+|   |       |   JoinRequestPartPlugin.js
+|   |       |   JoinRequestPlugin.js
+|   |       |   LogInfoPlugin.js
+|   |       |   MainFieldPlugin.js
+|   |       |   ModulesInHierachicDirectoriesPlugin.js
+|   |       |   ModulesInHierarchicalDirectoriesPlugin.js
+|   |       |   ModulesInRootPlugin.js
+|   |       |   ModulesUtils.js
+|   |       |   NextPlugin.js
+|   |       |   ParsePlugin.js
+|   |       |   PnpPlugin.js
+|   |       |   Resolver.js
+|   |       |   ResolverFactory.js
+|   |       |   RestrictionsPlugin.js
+|   |       |   ResultPlugin.js
+|   |       |   RootsPlugin.js
+|   |       |   SelfReferencePlugin.js
+|   |       |   SymlinkPlugin.js
+|   |       |   SyncAsyncFileSystemDecorator.js
+|   |       |   TryNextPlugin.js
+|   |       |   TsconfigPathsPlugin.js
+|   |       |   UnsafeCachePlugin.js
+|   |       |   UseFilePlugin.js
+|   |       |   
+|   |       \---util
+|   |               entrypoints.js
+|   |               fs.js
+|   |               identifier.js
+|   |               memoize.js
+|   |               module-browser.js
+|   |               path.js
+|   |               process-browser.js
+|   |               strip-json-comments.js
+|   |               
+|   +---fdir
+|   |   |   LICENSE
+|   |   |   package.json
+|   |   |   README.md
+|   |   |   
+|   |   \---dist
+|   |           index.cjs
+|   |           index.d.cts
+|   |           index.d.mts
+|   |           index.mjs
+|   |           
+|   +---graceful-fs
+|   |       clone.js
+|   |       graceful-fs.js
+|   |       legacy-streams.js
+|   |       LICENSE
+|   |       package.json
+|   |       polyfills.js
+|   |       README.md
+|   |       
+|   +---gsap
+|   |   |   all.js
+|   |   |   CSSPlugin.js
+|   |   |   CSSRulePlugin.js
+|   |   |   CustomBounce.js
+|   |   |   CustomEase.js
+|   |   |   CustomWiggle.js
+|   |   |   Draggable.js
+|   |   |   DrawSVGPlugin.js
+|   |   |   EaselPlugin.js
+|   |   |   EasePack.js
+|   |   |   Flip.js
+|   |   |   gsap-core.js
+|   |   |   GSDevTools.js
+|   |   |   index.js
+|   |   |   InertiaPlugin.js
+|   |   |   MorphSVGPlugin.js
+|   |   |   MotionPathHelper.js
+|   |   |   MotionPathPlugin.js
+|   |   |   Observer.js
+|   |   |   package.json
+|   |   |   Physics2DPlugin.js
+|   |   |   PhysicsPropsPlugin.js
+|   |   |   PixiPlugin.js
+|   |   |   README.md
+|   |   |   ScrambleTextPlugin.js
+|   |   |   ScrollSmoother.js
+|   |   |   ScrollToPlugin.js
+|   |   |   ScrollTrigger.js
+|   |   |   SECURITY.md
+|   |   |   SplitText.js
+|   |   |   TextPlugin.js
+|   |   |   
+|   |   +---dist
+|   |   |       all.js
+|   |   |       CSSRulePlugin.js
+|   |   |       CSSRulePlugin.min.js
+|   |   |       CSSRulePlugin.min.js.map
+|   |   |       CustomBounce.js
+|   |   |       CustomBounce.min.js
+|   |   |       CustomBounce.min.js.map
+|   |   |       CustomEase.js
+|   |   |       CustomEase.min.js
+|   |   |       CustomEase.min.js.map
+|   |   |       CustomWiggle.js
+|   |   |       CustomWiggle.min.js
+|   |   |       CustomWiggle.min.js.map
+|   |   |       Draggable.js
+|   |   |       Draggable.min.js
+|   |   |       Draggable.min.js.map
+|   |   |       DrawSVGPlugin.js
+|   |   |       DrawSVGPlugin.min.js
+|   |   |       DrawSVGPlugin.min.js.map
+|   |   |       EaselPlugin.js
+|   |   |       EaselPlugin.min.js
+|   |   |       EaselPlugin.min.js.map
+|   |   |       EasePack.js
+|   |   |       EasePack.min.js
+|   |   |       EasePack.min.js.map
+|   |   |       Flip.js
+|   |   |       Flip.min.js
+|   |   |       Flip.min.js.map
+|   |   |       gsap.js
+|   |   |       gsap.min.js
+|   |   |       gsap.min.js.map
+|   |   |       GSDevTools.js
+|   |   |       GSDevTools.min.js
+|   |   |       GSDevTools.min.js.map
+|   |   |       InertiaPlugin.js
+|   |   |       InertiaPlugin.min.js
+|   |   |       InertiaPlugin.min.js.map
+|   |   |       MorphSVGPlugin.js
+|   |   |       MorphSVGPlugin.min.js
+|   |   |       MorphSVGPlugin.min.js.map
+|   |   |       MotionPathHelper.js
+|   |   |       MotionPathHelper.min.js
+|   |   |       MotionPathHelper.min.js.map
+|   |   |       MotionPathPlugin.js
+|   |   |       MotionPathPlugin.min.js
+|   |   |       MotionPathPlugin.min.js.map
+|   |   |       Observer.js
+|   |   |       Observer.min.js
+|   |   |       Observer.min.js.map
+|   |   |       Physics2DPlugin.js
+|   |   |       Physics2DPlugin.min.js
+|   |   |       Physics2DPlugin.min.js.map
+|   |   |       PhysicsPropsPlugin.js
+|   |   |       PhysicsPropsPlugin.min.js
+|   |   |       PhysicsPropsPlugin.min.js.map
+|   |   |       PixiPlugin.js
+|   |   |       PixiPlugin.min.js
+|   |   |       PixiPlugin.min.js.map
+|   |   |       ScrambleTextPlugin.js
+|   |   |       ScrambleTextPlugin.min.js
+|   |   |       ScrambleTextPlugin.min.js.map
+|   |   |       ScrollSmoother.js
+|   |   |       ScrollSmoother.min.js
+|   |   |       ScrollSmoother.min.js.map
+|   |   |       ScrollToPlugin.js
+|   |   |       ScrollToPlugin.min.js
+|   |   |       ScrollToPlugin.min.js.map
+|   |   |       ScrollTrigger.js
+|   |   |       ScrollTrigger.min.js
+|   |   |       ScrollTrigger.min.js.map
+|   |   |       SplitText.js
+|   |   |       SplitText.min.js
+|   |   |       SplitText.min.js.map
+|   |   |       TextPlugin.js
+|   |   |       TextPlugin.min.js
+|   |   |       TextPlugin.min.js.map
+|   |   |       
+|   |   +---src
+|   |   |   |   all.js
+|   |   |   |   CSSPlugin.js
+|   |   |   |   CSSRulePlugin.js
+|   |   |   |   CustomBounce.js
+|   |   |   |   CustomEase.js
+|   |   |   |   CustomWiggle.js
+|   |   |   |   Draggable.js
+|   |   |   |   DrawSVGPlugin.js
+|   |   |   |   EaselPlugin.js
+|   |   |   |   EasePack.js
+|   |   |   |   Flip.js
+|   |   |   |   gsap-core.js
+|   |   |   |   GSDevTools.js
+|   |   |   |   index.js
+|   |   |   |   InertiaPlugin.js
+|   |   |   |   MorphSVGPlugin.js
+|   |   |   |   MotionPathHelper.js
+|   |   |   |   MotionPathPlugin.js
+|   |   |   |   Observer.js
+|   |   |   |   Physics2DPlugin.js
+|   |   |   |   PhysicsPropsPlugin.js
+|   |   |   |   PixiPlugin.js
+|   |   |   |   ScrambleTextPlugin.js
+|   |   |   |   ScrollSmoother.js
+|   |   |   |   ScrollToPlugin.js
+|   |   |   |   ScrollTrigger.js
+|   |   |   |   SplitText.js
+|   |   |   |   SplitText.ts
+|   |   |   |   TextPlugin.js
+|   |   |   |   
+|   |   |   \---utils
+|   |   |           matrix.js
+|   |   |           PathEditor.js
+|   |   |           paths.js
+|   |   |           strings.js
+|   |   |           VelocityTracker.js
+|   |   |           
+|   |   +---types
+|   |   |   |   animation.d.ts
+|   |   |   |   css-plugin.d.ts
+|   |   |   |   css-rule-plugin.d.ts
+|   |   |   |   custom-bounce.d.ts
+|   |   |   |   custom-ease.d.ts
+|   |   |   |   custom-wiggle.d.ts
+|   |   |   |   Draggable.d.ts
+|   |   |   |   draw-svg-plugin.d.ts
+|   |   |   |   ease.d.ts
+|   |   |   |   easel-plugin.d.ts
+|   |   |   |   Flip.d.ts
+|   |   |   |   gs-dev-tools.d.ts
+|   |   |   |   gsap-core.d.ts
+|   |   |   |   gsap-plugins.d.ts
+|   |   |   |   gsap-utils.d.ts
+|   |   |   |   index.d.ts
+|   |   |   |   inertia-plugin.d.ts
+|   |   |   |   morph-svg-plugin.d.ts
+|   |   |   |   motion-path-helper.d.ts
+|   |   |   |   motion-path-plugin.d.ts
+|   |   |   |   Observer.d.ts
+|   |   |   |   physics-2d-plugin.d.ts
+|   |   |   |   physics-props-plugin.d.ts
+|   |   |   |   pixi-plugin.d.ts
+|   |   |   |   scramble-text-plugin.d.ts
+|   |   |   |   scroll-smoother.d.ts
+|   |   |   |   scroll-to-plugin.d.ts
+|   |   |   |   scroll-trigger.d.ts
+|   |   |   |   split-text.d.ts
+|   |   |   |   text-plugin.d.ts
+|   |   |   |   timeline.d.ts
+|   |   |   |   tween.d.ts
+|   |   |   |   
+|   |   |   \---utils
+|   |   |           VelocityTracker.d.ts
+|   |   |           
+|   |   \---utils
+|   |           matrix.js
+|   |           PathEditor.js
+|   |           paths.js
+|   |           strings.js
+|   |           VelocityTracker.js
+|   |           
+|   +---jiti
+|   |   |   LICENSE
+|   |   |   package.json
+|   |   |   README.md
+|   |   |   
+|   |   +---dist
+|   |   |       babel.cjs
+|   |   |       jiti.cjs
+|   |   |       
+|   |   \---lib
+|   |           jiti-cli.mjs
+|   |           jiti-hooks.mjs
+|   |           jiti-native.mjs
+|   |           jiti-register.d.mts
+|   |           jiti-register.mjs
+|   |           jiti-static.mjs
+|   |           jiti.cjs
+|   |           jiti.d.cts
+|   |           jiti.d.mts
+|   |           jiti.mjs
+|   |           types.d.ts
+|   |           
+|   +---lightningcss
+|   |   |   LICENSE
+|   |   |   package.json
+|   |   |   README.md
+|   |   |   
+|   |   \---node
+|   |           ast.d.ts
+|   |           ast.js.flow
+|   |           browserslistToTargets.js
+|   |           composeVisitors.js
+|   |           flags.js
+|   |           index.d.ts
+|   |           index.js
+|   |           index.js.flow
+|   |           index.mjs
+|   |           targets.d.ts
+|   |           targets.js.flow
+|   |           
+|   +---lightningcss-win32-x64-msvc
+|   |       LICENSE
+|   |       lightningcss.win32-x64-msvc.node
+|   |       package.json
+|   |       README.md
+|   |       
+|   +---magic-string
+|   |   |   LICENSE
+|   |   |   package.json
+|   |   |   README.md
+|   |   |   
+|   |   \---dist
+|   |           magic-string.cjs.d.ts
+|   |           magic-string.cjs.js
+|   |           magic-string.cjs.js.map
+|   |           magic-string.es.d.mts
+|   |           magic-string.es.mjs
+|   |           magic-string.es.mjs.map
+|   |           magic-string.umd.js
+|   |           magic-string.umd.js.map
+|   |           
+|   +---nanoid
+|   |   |   index.browser.cjs
+|   |   |   index.browser.js
+|   |   |   index.cjs
+|   |   |   index.d.cts
+|   |   |   index.d.ts
+|   |   |   index.js
+|   |   |   LICENSE
+|   |   |   nanoid.js
+|   |   |   package.json
+|   |   |   README.md
+|   |   |   
+|   |   +---async
+|   |   |       index.browser.cjs
+|   |   |       index.browser.js
+|   |   |       index.cjs
+|   |   |       index.d.ts
+|   |   |       index.js
+|   |   |       index.native.js
+|   |   |       package.json
+|   |   |       
+|   |   +---bin
+|   |   |       nanoid.cjs
+|   |   |       
+|   |   +---non-secure
+|   |   |       index.cjs
+|   |   |       index.d.ts
+|   |   |       index.js
+|   |   |       package.json
+|   |   |       
+|   |   \---url-alphabet
+|   |           index.cjs
+|   |           index.js
+|   |           package.json
+|   |           
+|   +---picocolors
+|   |       LICENSE
+|   |       package.json
+|   |       picocolors.browser.js
+|   |       picocolors.d.ts
+|   |       picocolors.js
+|   |       README.md
+|   |       types.d.ts
+|   |       
+|   +---picomatch
+|   |   |   index.js
+|   |   |   LICENSE
+|   |   |   package.json
+|   |   |   posix.js
+|   |   |   README.md
+|   |   |   
+|   |   \---lib
+|   |           constants.js
+|   |           parse.js
+|   |           picomatch.js
+|   |           scan.js
+|   |           utils.js
+|   |           
+|   +---postcss
+|   |   |   LICENSE
+|   |   |   package.json
+|   |   |   README.md
+|   |   |   
+|   |   \---lib
+|   |           at-rule.d.ts
+|   |           at-rule.js
+|   |           comment.d.ts
+|   |           comment.js
+|   |           container.d.ts
+|   |           container.js
+|   |           css-syntax-error.d.ts
+|   |           css-syntax-error.js
+|   |           declaration.d.ts
+|   |           declaration.js
+|   |           document.d.ts
+|   |           document.js
+|   |           fromJSON.d.ts
+|   |           fromJSON.js
+|   |           input.d.ts
+|   |           input.js
+|   |           lazy-result.d.ts
+|   |           lazy-result.js
+|   |           list.d.ts
+|   |           list.js
+|   |           map-generator.js
+|   |           no-work-result.d.ts
+|   |           no-work-result.js
+|   |           node.d.ts
+|   |           node.js
+|   |           parse.d.ts
+|   |           parse.js
+|   |           parser.js
+|   |           postcss.d.mts
+|   |           postcss.d.ts
+|   |           postcss.js
+|   |           postcss.mjs
+|   |           previous-map.d.ts
+|   |           previous-map.js
+|   |           processor.d.ts
+|   |           processor.js
+|   |           result.d.ts
+|   |           result.js
+|   |           root.d.ts
+|   |           root.js
+|   |           rule.d.ts
+|   |           rule.js
+|   |           stringifier.d.ts
+|   |           stringifier.js
+|   |           stringify.d.ts
+|   |           stringify.js
+|   |           symbols.js
+|   |           terminal-highlight.js
+|   |           tokenize.js
+|   |           warn-once.js
+|   |           warning.d.ts
+|   |           warning.js
+|   |           
+|   +---rolldown
+|   |   |   LICENSE
+|   |   |   package.json
+|   |   |   README.md
+|   |   |   
+|   |   +---bin
+|   |   |       cli.mjs
+|   |   |       
+|   |   \---dist
+|   |       |   cli.d.mts
+|   |       |   cli.mjs
+|   |       |   config.d.mts
+|   |       |   config.mjs
+|   |       |   experimental-index.d.mts
+|   |       |   experimental-index.mjs
+|   |       |   experimental-runtime-types.d.ts
+|   |       |   filter-index.d.mts
+|   |       |   filter-index.mjs
+|   |       |   get-log-filter.d.mts
+|   |       |   get-log-filter.mjs
+|   |       |   index.d.mts
+|   |       |   index.mjs
+|   |       |   parallel-plugin-worker.d.mts
+|   |       |   parallel-plugin-worker.mjs
+|   |       |   parallel-plugin.d.mts
+|   |       |   parallel-plugin.mjs
+|   |       |   parse-ast-index.d.mts
+|   |       |   parse-ast-index.mjs
+|   |       |   plugins-index.d.mts
+|   |       |   plugins-index.mjs
+|   |       |   utils-index.d.mts
+|   |       |   utils-index.mjs
+|   |       |   
+|   |       \---shared
+|   |               binding-D26QphWG.d.mts
+|   |               binding-TuFFIE_J.mjs
+|   |               bindingify-input-options-XPJLJOD0.mjs
+|   |               constructors-BbWPse2X.d.mts
+|   |               constructors-D_3i7dpX.mjs
+|   |               define-config-BhJ90aEv.d.mts
+|   |               define-config-Demdg3_4.mjs
+|   |               dist-DKbukT1H.mjs
+|   |               error-BHRSI0R7.mjs
+|   |               get-log-filter-BpNVNJ5-.d.mts
+|   |               load-config-BL_FI6dc.mjs
+|   |               logging-BSNejiLS.d.mts
+|   |               logs-ZGEh6uhb.mjs
+|   |               misc-CoQm4NHO.mjs
+|   |               normalize-string-or-regex-dnh67V_w.mjs
+|   |               parse-D4dtlfWy.mjs
+|   |               prompt--dNycKSZ.mjs
+|   |               resolve-tsconfig-DxqIJB3x.mjs
+|   |               rolldown-build-CtPvmZgJ.mjs
+|   |               rolldown-ChpIlMRm.mjs
+|   |               transform-BPrUvqEZ.d.mts
+|   |               watch-B1b0gmVh.mjs
+|   |               
+|   +---source-map-js
+|   |   |   LICENSE
+|   |   |   package.json
+|   |   |   README.md
+|   |   |   source-map.d.ts
+|   |   |   source-map.js
+|   |   |   
+|   |   \---lib
+|   |           array-set.js
+|   |           base64-vlq.js
+|   |           base64.js
+|   |           binary-search.js
+|   |           mapping-list.js
+|   |           quick-sort.js
+|   |           source-map-consumer.d.ts
+|   |           source-map-consumer.js
+|   |           source-map-generator.d.ts
+|   |           source-map-generator.js
+|   |           source-node.d.ts
+|   |           source-node.js
+|   |           util.js
+|   |           
+|   +---tailwindcss
+|   |   |   index.css
+|   |   |   LICENSE
+|   |   |   package.json
+|   |   |   preflight.css
+|   |   |   README.md
+|   |   |   theme.css
+|   |   |   utilities.css
+|   |   |   
+|   |   \---dist
+|   |           chunk-5JIJA4QV.mjs
+|   |           chunk-HMCCH6MG.mjs
+|   |           chunk-X4GG3EDV.mjs
+|   |           colors-C__qRT83.d.ts
+|   |           colors.d.mts
+|   |           colors.d.ts
+|   |           colors.js
+|   |           colors.mjs
+|   |           default-theme.d.mts
+|   |           default-theme.d.ts
+|   |           default-theme.js
+|   |           default-theme.mjs
+|   |           flatten-color-palette.d.mts
+|   |           flatten-color-palette.d.ts
+|   |           flatten-color-palette.js
+|   |           flatten-color-palette.mjs
+|   |           lib.d.mts
+|   |           lib.d.ts
+|   |           lib.js
+|   |           lib.mjs
+|   |           plugin.d.mts
+|   |           plugin.d.ts
+|   |           plugin.js
+|   |           plugin.mjs
+|   |           resolve-config-B4yBzhca.d.ts
+|   |           resolve-config-QUZ9b-Gn.d.mts
+|   |           types-DWdTiksJ.d.mts
+|   |           
+|   +---tapable
+|   |   |   LICENSE
+|   |   |   package.json
+|   |   |   README.md
+|   |   |   tapable.d.ts
+|   |   |   
+|   |   \---lib
+|   |           AsyncParallelBailHook.js
+|   |           AsyncParallelHook.js
+|   |           AsyncSeriesBailHook.js
+|   |           AsyncSeriesHook.js
+|   |           AsyncSeriesLoopHook.js
+|   |           AsyncSeriesWaterfallHook.js
+|   |           Hook.js
+|   |           HookCodeFactory.js
+|   |           HookMap.js
+|   |           index.js
+|   |           MultiHook.js
+|   |           SyncBailHook.js
+|   |           SyncHook.js
+|   |           SyncLoopHook.js
+|   |           SyncWaterfallHook.js
+|   |           util-browser.js
+|   |           
+|   +---three
+|   |   |   LICENSE
+|   |   |   package.json
+|   |   |   README.md
+|   |   |   
+|   |   +---build
+|   |   |       three.cjs
+|   |   |       three.core.js
+|   |   |       three.core.min.js
+|   |   |       three.module.js
+|   |   |       three.module.min.js
+|   |   |       three.tsl.js
+|   |   |       three.tsl.min.js
+|   |   |       three.webgpu.js
+|   |   |       three.webgpu.min.js
+|   |   |       three.webgpu.nodes.js
+|   |   |       three.webgpu.nodes.min.js
+|   |   |       
+|   |   +---examples
+|   |   |   \---jsm
+|   |   |       |   Addons.js
+|   |   |       |   
+|   |   |       +---animation
+|   |   |       |       AnimationClipCreator.js
+|   |   |       |       CCDIKSolver.js
+|   |   |       |       
+|   |   |       +---capabilities
+|   |   |       |       WebGL.js
+|   |   |       |       WebGPU.js
+|   |   |       |       
+|   |   |       +---controls
+|   |   |       |       ArcballControls.js
+|   |   |       |       DragControls.js
+|   |   |       |       FirstPersonControls.js
+|   |   |       |       FlyControls.js
+|   |   |       |       MapControls.js
+|   |   |       |       OrbitControls.js
+|   |   |       |       PointerLockControls.js
+|   |   |       |       TrackballControls.js
+|   |   |       |       TransformControls.js
+|   |   |       |       
+|   |   |       +---csm
+|   |   |       |       CSM.js
+|   |   |       |       CSMFrustum.js
+|   |   |       |       CSMHelper.js
+|   |   |       |       CSMShader.js
+|   |   |       |       CSMShadowNode.js
+|   |   |       |       
+|   |   |       +---curves
+|   |   |       |       CurveExtras.js
+|   |   |       |       NURBSCurve.js
+|   |   |       |       NURBSSurface.js
+|   |   |       |       NURBSUtils.js
+|   |   |       |       NURBSVolume.js
+|   |   |       |       
+|   |   |       +---effects
+|   |   |       |       AnaglyphEffect.js
+|   |   |       |       AsciiEffect.js
+|   |   |       |       OutlineEffect.js
+|   |   |       |       ParallaxBarrierEffect.js
+|   |   |       |       StereoEffect.js
+|   |   |       |       
+|   |   |       +---environments
+|   |   |       |       ColorEnvironment.js
+|   |   |       |       DebugEnvironment.js
+|   |   |       |       RoomEnvironment.js
+|   |   |       |       
+|   |   |       +---exporters
+|   |   |       |       DRACOExporter.js
+|   |   |       |       EXRExporter.js
+|   |   |       |       GLTFExporter.js
+|   |   |       |       KTX2Exporter.js
+|   |   |       |       OBJExporter.js
+|   |   |       |       PLYExporter.js
+|   |   |       |       STLExporter.js
+|   |   |       |       USDZExporter.js
+|   |   |       |       
+|   |   |       +---generators
+|   |   |       |   |   CityGenerator.js
+|   |   |       |   |   ForestGenerator.js
+|   |   |       |   |   TerrainGenerator.js
+|   |   |       |   |   TreeGenerator.js
+|   |   |       |   |   
+|   |   |       |   \---city
+|   |   |       |           SidewalkGenerator.js
+|   |   |       |           SkyscraperGenerator.js
+|   |   |       |           
+|   |   |       +---geometries
+|   |   |       |       BoxLineGeometry.js
+|   |   |       |       ConvexGeometry.js
+|   |   |       |       DecalGeometry.js
+|   |   |       |       LoftGeometry.js
+|   |   |       |       ParametricFunctions.js
+|   |   |       |       ParametricGeometry.js
+|   |   |       |       RoundedBoxGeometry.js
+|   |   |       |       TeapotGeometry.js
+|   |   |       |       TextGeometry.js
+|   |   |       |       
+|   |   |       +---gpgpu
+|   |   |       |       BitonicSort.js
+|   |   |       |       
+|   |   |       +---helpers
+|   |   |       |       AnimationPathHelper.js
+|   |   |       |       LightProbeGridHelper.js
+|   |   |       |       LightProbeHelper.js
+|   |   |       |       LightProbeHelperGPU.js
+|   |   |       |       OctreeHelper.js
+|   |   |       |       PositionalAudioHelper.js
+|   |   |       |       RapierHelper.js
+|   |   |       |       RectAreaLightHelper.js
+|   |   |       |       TextureHelper.js
+|   |   |       |       TextureHelperGPU.js
+|   |   |       |       VertexNormalsHelper.js
+|   |   |       |       VertexTangentsHelper.js
+|   |   |       |       ViewHelper.js
+|   |   |       |       
+|   |   |       +---inspector
+|   |   |       |   |   Extension.js
+|   |   |       |   |   Inspector.js
+|   |   |       |   |   RendererInspector.js
+|   |   |       |   |   
+|   |   |       |   +---extensions
+|   |   |       |   |   \---tsl-graph
+|   |   |       |   |           TSLGraphEditor.js
+|   |   |       |   |           TSLGraphLoader.js
+|   |   |       |   |           
+|   |   |       |   +---tabs
+|   |   |       |   |       Console.js
+|   |   |       |   |       Memory.js
+|   |   |       |   |       Parameters.js
+|   |   |       |   |       Performance.js
+|   |   |       |   |       Settings.js
+|   |   |       |   |       Timeline.js
+|   |   |       |   |       Viewer.js
+|   |   |       |   |       
+|   |   |       |   \---ui
+|   |   |       |           Graph.js
+|   |   |       |           Item.js
+|   |   |       |           List.js
+|   |   |       |           Profiler.js
+|   |   |       |           Style.js
+|   |   |       |           Tab.js
+|   |   |       |           utils.js
+|   |   |       |           Values.js
+|   |   |       |           
+|   |   |       +---interaction
+|   |   |       |       InteractionManager.js
+|   |   |       |       
+|   |   |       +---interactive
+|   |   |       |       HTMLMesh.js
+|   |   |       |       InteractiveGroup.js
+|   |   |       |       SelectionBox.js
+|   |   |       |       SelectionHelper.js
+|   |   |       |       
+|   |   |       +---libs
+|   |   |       |   |   chevrotain.module.min.js
+|   |   |       |   |   demuxer_mp4.js
+|   |   |       |   |   ecsy.module.js
+|   |   |       |   |   fflate.module.js
+|   |   |       |   |   ktx-parse.module.js
+|   |   |       |   |   lil-gui.module.min.js
+|   |   |       |   |   meshopt_clusterizer.module.js
+|   |   |       |   |   meshopt_decoder.module.js
+|   |   |       |   |   meshopt_simplifier.module.js
+|   |   |       |   |   mikktspace.module.js
+|   |   |       |   |   motion-controllers.module.js
+|   |   |       |   |   potpack.module.js
+|   |   |       |   |   stats.module.js
+|   |   |       |   |   surfaceNet.js
+|   |   |       |   |   tween.module.js
+|   |   |       |   |   utif.module.js
+|   |   |       |   |   zstddec.module.js
+|   |   |       |   |   
+|   |   |       |   +---basis
+|   |   |       |   |       basis_transcoder.js
+|   |   |       |   |       basis_transcoder.wasm
+|   |   |       |   |       README.md
+|   |   |       |   |       
+|   |   |       |   \---draco
+|   |   |       |       |   draco_decoder.js
+|   |   |       |       |   draco_decoder.wasm
+|   |   |       |       |   draco_wasm_wrapper.js
+|   |   |       |       |   README.md
+|   |   |       |       |   
+|   |   |       |       \---gltf
+|   |   |       |               draco_decoder.js
+|   |   |       |               draco_decoder.wasm
+|   |   |       |               draco_wasm_wrapper.js
+|   |   |       |               
+|   |   |       +---lighting
+|   |   |       |       ClusteredLighting.js
+|   |   |       |       DynamicLighting.js
+|   |   |       |       LightProbeGrid.js
+|   |   |       |       
+|   |   |       +---lights
+|   |   |       |       LightProbeGenerator.js
+|   |   |       |       RectAreaLightTexturesLib.js
+|   |   |       |       RectAreaLightUniformsLib.js
+|   |   |       |       
+|   |   |       +---lines
+|   |   |       |   |   Line2.js
+|   |   |       |   |   LineGeometry.js
+|   |   |       |   |   LineMaterial.js
+|   |   |       |   |   LineSegments2.js
+|   |   |       |   |   LineSegmentsGeometry.js
+|   |   |       |   |   Wireframe.js
+|   |   |       |   |   WireframeGeometry2.js
+|   |   |       |   |   
+|   |   |       |   \---webgpu
+|   |   |       |           Line2.js
+|   |   |       |           LineSegments2.js
+|   |   |       |           Wireframe.js
+|   |   |       |           
+|   |   |       +---loaders
+|   |   |       |   |   3DMLoader.js
+|   |   |       |   |   3MFLoader.js
+|   |   |       |   |   AMFLoader.js
+|   |   |       |   |   BVHLoader.js
+|   |   |       |   |   ColladaLoader.js
+|   |   |       |   |   DDSLoader.js
+|   |   |       |   |   DRACOLoader.js
+|   |   |       |   |   EXRLoader.js
+|   |   |       |   |   FBXLoader.js
+|   |   |       |   |   FontLoader.js
+|   |   |       |   |   GCodeLoader.js
+|   |   |       |   |   GLTFLoader.js
+|   |   |       |   |   HDRCubeTextureLoader.js
+|   |   |       |   |   HDRLoader.js
+|   |   |       |   |   IESLoader.js
+|   |   |       |   |   KMZLoader.js
+|   |   |       |   |   KTX2Loader.js
+|   |   |       |   |   KTXLoader.js
+|   |   |       |   |   LDrawLoader.js
+|   |   |       |   |   LottieLoader.js
+|   |   |       |   |   LUT3dlLoader.js
+|   |   |       |   |   LUTCubeLoader.js
+|   |   |       |   |   LUTImageLoader.js
+|   |   |       |   |   LWOLoader.js
+|   |   |       |   |   MaterialXLoader.js
+|   |   |       |   |   MD2Loader.js
+|   |   |       |   |   MDDLoader.js
+|   |   |       |   |   MTLLoader.js
+|   |   |       |   |   NRRDLoader.js
+|   |   |       |   |   OBJLoader.js
+|   |   |       |   |   PCDLoader.js
+|   |   |       |   |   PDBLoader.js
+|   |   |       |   |   PLYLoader.js
+|   |   |       |   |   PVRLoader.js
+|   |   |       |   |   RGBELoader.js
+|   |   |       |   |   STLLoader.js
+|   |   |       |   |   SVGLoader.js
+|   |   |       |   |   TDSLoader.js
+|   |   |       |   |   TGALoader.js
+|   |   |       |   |   TIFFLoader.js
+|   |   |       |   |   TTFLoader.js
+|   |   |       |   |   UltraHDRLoader.js
+|   |   |       |   |   USDLoader.js
+|   |   |       |   |   USDZLoader.js
+|   |   |       |   |   VOXLoader.js
+|   |   |       |   |   VRMLLoader.js
+|   |   |       |   |   VTKLoader.js
+|   |   |       |   |   XYZLoader.js
+|   |   |       |   |   
+|   |   |       |   +---collada
+|   |   |       |   |       ColladaComposer.js
+|   |   |       |   |       ColladaParser.js
+|   |   |       |   |       
+|   |   |       |   +---lwo
+|   |   |       |   |       IFFParser.js
+|   |   |       |   |       LWO2Parser.js
+|   |   |       |   |       LWO3Parser.js
+|   |   |       |   |       
+|   |   |       |   \---usd
+|   |   |       |           USDAParser.js
+|   |   |       |           USDComposer.js
+|   |   |       |           USDCParser.js
+|   |   |       |           
+|   |   |       +---materials
+|   |   |       |       LDrawConditionalLineMaterial.js
+|   |   |       |       LDrawConditionalLineNodeMaterial.js
+|   |   |       |       WoodNodeMaterial.js
+|   |   |       |       
+|   |   |       +---math
+|   |   |       |       Capsule.js
+|   |   |       |       ColorConverter.js
+|   |   |       |       ColorSpaces.js
+|   |   |       |       ConvexHull.js
+|   |   |       |       ImprovedNoise.js
+|   |   |       |       Lut.js
+|   |   |       |       MeshSurfaceSampler.js
+|   |   |       |       OBB.js
+|   |   |       |       Octree.js
+|   |   |       |       SimplexNoise.js
+|   |   |       |       
+|   |   |       +---misc
+|   |   |       |       ConvexObjectBreaker.js
+|   |   |       |       GPUComputationRenderer.js
+|   |   |       |       Gyroscope.js
+|   |   |       |       MD2Character.js
+|   |   |       |       MD2CharacterComplex.js
+|   |   |       |       MorphAnimMesh.js
+|   |   |       |       MorphBlendMesh.js
+|   |   |       |       ProgressiveLightMap.js
+|   |   |       |       ProgressiveLightMapGPU.js
+|   |   |       |       RollerCoaster.js
+|   |   |       |       TileCreasedNormalsPlugin.js
+|   |   |       |       TubePainter.js
+|   |   |       |       Volume.js
+|   |   |       |       VolumeSlice.js
+|   |   |       |       
+|   |   |       +---modifiers
+|   |   |       |       CurveModifier.js
+|   |   |       |       CurveModifierGPU.js
+|   |   |       |       EdgeSplitModifier.js
+|   |   |       |       SimplifyModifier.js
+|   |   |       |       TessellateModifier.js
+|   |   |       |       
+|   |   |       +---objects
+|   |   |       |       GroundedSkybox.js
+|   |   |       |       Lensflare.js
+|   |   |       |       LensflareMesh.js
+|   |   |       |       MarchingCubes.js
+|   |   |       |       Reflector.js
+|   |   |       |       ReflectorForSSRPass.js
+|   |   |       |       Refractor.js
+|   |   |       |       ShadowMesh.js
+|   |   |       |       Sky.js
+|   |   |       |       SkyMesh.js
+|   |   |       |       Water.js
+|   |   |       |       Water2.js
+|   |   |       |       Water2Mesh.js
+|   |   |       |       WaterMesh.js
+|   |   |       |       
+|   |   |       +---offscreen
+|   |   |       |       jank.js
+|   |   |       |       offscreen.js
+|   |   |       |       scene.js
+|   |   |       |       
+|   |   |       +---physics
+|   |   |       |       AmmoPhysics.js
+|   |   |       |       JoltPhysics.js
+|   |   |       |       RapierPhysics.js
+|   |   |       |       
+|   |   |       +---postprocessing
+|   |   |       |       AfterimagePass.js
+|   |   |       |       BloomPass.js
+|   |   |       |       BokehPass.js
+|   |   |       |       ClearPass.js
+|   |   |       |       CubeTexturePass.js
+|   |   |       |       DotScreenPass.js
+|   |   |       |       EffectComposer.js
+|   |   |       |       FilmPass.js
+|   |   |       |       FXAAPass.js
+|   |   |       |       GlitchPass.js
+|   |   |       |       GTAOPass.js
+|   |   |       |       HalftonePass.js
+|   |   |       |       LUTPass.js
+|   |   |       |       MaskPass.js
+|   |   |       |       OutlinePass.js
+|   |   |       |       OutputPass.js
+|   |   |       |       Pass.js
+|   |   |       |       RenderPass.js
+|   |   |       |       RenderPixelatedPass.js
+|   |   |       |       RenderTransitionPass.js
+|   |   |       |       SAOPass.js
+|   |   |       |       SavePass.js
+|   |   |       |       ShaderPass.js
+|   |   |       |       SMAAPass.js
+|   |   |       |       SSAARenderPass.js
+|   |   |       |       SSAOPass.js
+|   |   |       |       SSRPass.js
+|   |   |       |       TAARenderPass.js
+|   |   |       |       TexturePass.js
+|   |   |       |       UnrealBloomPass.js
+|   |   |       |       
+|   |   |       +---renderers
+|   |   |       |       CSS2DRenderer.js
+|   |   |       |       CSS3DRenderer.js
+|   |   |       |       Projector.js
+|   |   |       |       SVGRenderer.js
+|   |   |       |       
+|   |   |       +---shaders
+|   |   |       |       ACESFilmicToneMappingShader.js
+|   |   |       |       AfterimageShader.js
+|   |   |       |       BasicShader.js
+|   |   |       |       BleachBypassShader.js
+|   |   |       |       BlendShader.js
+|   |   |       |       BokehShader.js
+|   |   |       |       BokehShader2.js
+|   |   |       |       BrightnessContrastShader.js
+|   |   |       |       ColorCorrectionShader.js
+|   |   |       |       ColorifyShader.js
+|   |   |       |       ConvolutionShader.js
+|   |   |       |       CopyShader.js
+|   |   |       |       DepthLimitedBlurShader.js
+|   |   |       |       DigitalGlitch.js
+|   |   |       |       DOFMipMapShader.js
+|   |   |       |       DotScreenShader.js
+|   |   |       |       ExposureShader.js
+|   |   |       |       FilmShader.js
+|   |   |       |       FocusShader.js
+|   |   |       |       FreiChenShader.js
+|   |   |       |       FXAAShader.js
+|   |   |       |       GammaCorrectionShader.js
+|   |   |       |       GTAOShader.js
+|   |   |       |       HalftoneShader.js
+|   |   |       |       HorizontalBlurShader.js
+|   |   |       |       HorizontalTiltShiftShader.js
+|   |   |       |       HueSaturationShader.js
+|   |   |       |       KaleidoShader.js
+|   |   |       |       LuminosityHighPassShader.js
+|   |   |       |       LuminosityShader.js
+|   |   |       |       MirrorShader.js
+|   |   |       |       NormalMapShader.js
+|   |   |       |       OutputShader.js
+|   |   |       |       PoissonDenoiseShader.js
+|   |   |       |       RGBShiftShader.js
+|   |   |       |       SAOShader.js
+|   |   |       |       SepiaShader.js
+|   |   |       |       SMAAShader.js
+|   |   |       |       SobelOperatorShader.js
+|   |   |       |       SSAOShader.js
+|   |   |       |       SSRShader.js
+|   |   |       |       SubsurfaceScatteringShader.js
+|   |   |       |       TechnicolorShader.js
+|   |   |       |       ToonShader.js
+|   |   |       |       TriangleBlurShader.js
+|   |   |       |       UnpackDepthRGBAShader.js
+|   |   |       |       VelocityShader.js
+|   |   |       |       VerticalBlurShader.js
+|   |   |       |       VerticalTiltShiftShader.js
+|   |   |       |       VignetteShader.js
+|   |   |       |       VolumeShader.js
+|   |   |       |       WaterRefractionShader.js
+|   |   |       |       
+|   |   |       +---textures
+|   |   |       |       FlakesTexture.js
+|   |   |       |       
+|   |   |       +---transpiler
+|   |   |       |       AST.js
+|   |   |       |       GLSLDecoder.js
+|   |   |       |       Linker.js
+|   |   |       |       ShaderToyDecoder.js
+|   |   |       |       Transpiler.js
+|   |   |       |       TranspilerUtils.js
+|   |   |       |       TSLEncoder.js
+|   |   |       |       WGSLEncoder.js
+|   |   |       |       
+|   |   |       +---tsl
+|   |   |       |   |   WebGLNodesHandler.js
+|   |   |       |   |   
+|   |   |       |   +---display
+|   |   |       |   |       AfterImageNode.js
+|   |   |       |   |       AnaglyphPassNode.js
+|   |   |       |   |       BilateralBlurNode.js
+|   |   |       |   |       BleachBypass.js
+|   |   |       |   |       BloomNode.js
+|   |   |       |   |       boxBlur.js
+|   |   |       |   |       ChromaticAberrationNode.js
+|   |   |       |   |       CRT.js
+|   |   |       |   |       DenoiseNode.js
+|   |   |       |   |       depthAwareBlend.js
+|   |   |       |   |       DepthOfFieldNode.js
+|   |   |       |   |       DotScreenNode.js
+|   |   |       |   |       FilmNode.js
+|   |   |       |   |       FSR1Node.js
+|   |   |       |   |       FXAANode.js
+|   |   |       |   |       GaussianBlurNode.js
+|   |   |       |   |       GodraysNode.js
+|   |   |       |   |       GTAONode.js
+|   |   |       |   |       hashBlur.js
+|   |   |       |   |       ImportanceSampledEnvironment.js
+|   |   |       |   |       LensflareNode.js
+|   |   |       |   |       Lut3DNode.js
+|   |   |       |   |       MotionBlur.js
+|   |   |       |   |       OutlineNode.js
+|   |   |       |   |       ParallaxBarrierPassNode.js
+|   |   |       |   |       PixelationPassNode.js
+|   |   |       |   |       radialBlur.js
+|   |   |       |   |       RecurrentDenoiseNode.js
+|   |   |       |   |       RetroPassNode.js
+|   |   |       |   |       RGBShiftNode.js
+|   |   |       |   |       Sepia.js
+|   |   |       |   |       Shape.js
+|   |   |       |   |       SharpenNode.js
+|   |   |       |   |       SMAANode.js
+|   |   |       |   |       SobelOperatorNode.js
+|   |   |       |   |       SSAAPassNode.js
+|   |   |       |   |       SSGINode.js
+|   |   |       |   |       SSRNode.js
+|   |   |       |   |       SSSNode.js
+|   |   |       |   |       StereoCompositePassNode.js
+|   |   |       |   |       StereoPassNode.js
+|   |   |       |   |       TAAUNode.js
+|   |   |       |   |       TemporalReprojectNode.js
+|   |   |       |   |       TRAANode.js
+|   |   |       |   |       TransitionNode.js
+|   |   |       |   |       
+|   |   |       |   +---lighting
+|   |   |       |   |   |   ClusteredLightsNode.js
+|   |   |       |   |   |   DynamicLightsNode.js
+|   |   |       |   |   |   
+|   |   |       |   |   \---data
+|   |   |       |   |           AmbientLightDataNode.js
+|   |   |       |   |           DirectionalLightDataNode.js
+|   |   |       |   |           HemisphereLightDataNode.js
+|   |   |       |   |           PointLightDataNode.js
+|   |   |       |   |           SpotLightDataNode.js
+|   |   |       |   |           
+|   |   |       |   +---math
+|   |   |       |   |       Bayer.js
+|   |   |       |   |       curlNoise.js
+|   |   |       |   |       
+|   |   |       |   +---shadows
+|   |   |       |   |       TileShadowNode.js
+|   |   |       |   |       TileShadowNodeHelper.js
+|   |   |       |   |       
+|   |   |       |   \---utils
+|   |   |       |           GroundedSkybox.js
+|   |   |       |           Raymarching.js
+|   |   |       |           RNoise.js
+|   |   |       |           SpecularHelpers.js
+|   |   |       |           
+|   |   |       +---utils
+|   |   |       |       BufferGeometryUtils.js
+|   |   |       |       CameraUtils.js
+|   |   |       |       ColorUtils.js
+|   |   |       |       GeometryCompressionUtils.js
+|   |   |       |       GeometryUtils.js
+|   |   |       |       LDrawUtils.js
+|   |   |       |       SceneOptimizer.js
+|   |   |       |       SceneUtils.js
+|   |   |       |       ShadowMapViewer.js
+|   |   |       |       ShadowMapViewerGPU.js
+|   |   |       |       SkeletonUtils.js
+|   |   |       |       SortUtils.js
+|   |   |       |       UVsDebug.js
+|   |   |       |       WebGLTextureUtils.js
+|   |   |       |       WebGPUTextureUtils.js
+|   |   |       |       WorkerPool.js
+|   |   |       |       
+|   |   |       \---webxr
+|   |   |               ARButton.js
+|   |   |               OculusHandModel.js
+|   |   |               OculusHandPointerModel.js
+|   |   |               Text2D.js
+|   |   |               VRButton.js
+|   |   |               WebGLXRFallback.js
+|   |   |               XRButton.js
+|   |   |               XRControllerModelFactory.js
+|   |   |               XREstimatedLight.js
+|   |   |               XRHandMeshModel.js
+|   |   |               XRHandModelFactory.js
+|   |   |               XRHandPrimitiveModel.js
+|   |   |               XRPlanes.js
+|   |   |               
+|   |   \---src
+|   |       |   constants.js
+|   |       |   Three.Core.js
+|   |       |   Three.js
+|   |       |   Three.Legacy.js
+|   |       |   Three.TSL.js
+|   |       |   Three.WebGPU.js
+|   |       |   Three.WebGPU.Nodes.js
+|   |       |   utils.js
+|   |       |   
+|   |       +---animation
+|   |       |   |   AnimationAction.js
+|   |       |   |   AnimationClip.js
+|   |       |   |   AnimationMixer.js
+|   |       |   |   AnimationObjectGroup.js
+|   |       |   |   AnimationUtils.js
+|   |       |   |   KeyframeTrack.js
+|   |       |   |   PropertyBinding.js
+|   |       |   |   PropertyMixer.js
+|   |       |   |   
+|   |       |   \---tracks
+|   |       |           BooleanKeyframeTrack.js
+|   |       |           ColorKeyframeTrack.js
+|   |       |           NumberKeyframeTrack.js
+|   |       |           QuaternionKeyframeTrack.js
+|   |       |           StringKeyframeTrack.js
+|   |       |           VectorKeyframeTrack.js
+|   |       |           
+|   |       +---audio
+|   |       |       Audio.js
+|   |       |       AudioAnalyser.js
+|   |       |       AudioContext.js
+|   |       |       AudioListener.js
+|   |       |       PositionalAudio.js
+|   |       |       
+|   |       +---cameras
+|   |       |       ArrayCamera.js
+|   |       |       Camera.js
+|   |       |       CubeCamera.js
+|   |       |       OrthographicCamera.js
+|   |       |       PerspectiveCamera.js
+|   |       |       StereoCamera.js
+|   |       |       
+|   |       +---core
+|   |       |       BufferAttribute.js
+|   |       |       BufferGeometry.js
+|   |       |       Clock.js
+|   |       |       EventDispatcher.js
+|   |       |       GLBufferAttribute.js
+|   |       |       InstancedBufferAttribute.js
+|   |       |       InstancedBufferGeometry.js
+|   |       |       InstancedInterleavedBuffer.js
+|   |       |       InterleavedBuffer.js
+|   |       |       InterleavedBufferAttribute.js
+|   |       |       Layers.js
+|   |       |       Object3D.js
+|   |       |       Raycaster.js
+|   |       |       RenderTarget.js
+|   |       |       RenderTarget3D.js
+|   |       |       Timer.js
+|   |       |       Uniform.js
+|   |       |       UniformsGroup.js
+|   |       |       
+|   |       +---extras
+|   |       |   |   Controls.js
+|   |       |   |   DataUtils.js
+|   |       |   |   Earcut.js
+|   |       |   |   ImageUtils.js
+|   |       |   |   PMREMGenerator.js
+|   |       |   |   ShapeUtils.js
+|   |       |   |   TextureUtils.js
+|   |       |   |   
+|   |       |   +---core
+|   |       |   |       Curve.js
+|   |       |   |       CurvePath.js
+|   |       |   |       Interpolations.js
+|   |       |   |       Path.js
+|   |       |   |       Shape.js
+|   |       |   |       ShapePath.js
+|   |       |   |       
+|   |       |   +---curves
+|   |       |   |       ArcCurve.js
+|   |       |   |       CatmullRomCurve3.js
+|   |       |   |       CubicBezierCurve.js
+|   |       |   |       CubicBezierCurve3.js
+|   |       |   |       Curves.js
+|   |       |   |       EllipseCurve.js
+|   |       |   |       LineCurve.js
+|   |       |   |       LineCurve3.js
+|   |       |   |       QuadraticBezierCurve.js
+|   |       |   |       QuadraticBezierCurve3.js
+|   |       |   |       SplineCurve.js
+|   |       |   |       
+|   |       |   \---lib
+|   |       |           earcut.js
+|   |       |           
+|   |       +---geometries
+|   |       |       BoxGeometry.js
+|   |       |       CapsuleGeometry.js
+|   |       |       CircleGeometry.js
+|   |       |       ConeGeometry.js
+|   |       |       CylinderGeometry.js
+|   |       |       DodecahedronGeometry.js
+|   |       |       EdgesGeometry.js
+|   |       |       ExtrudeGeometry.js
+|   |       |       Geometries.js
+|   |       |       IcosahedronGeometry.js
+|   |       |       LatheGeometry.js
+|   |       |       OctahedronGeometry.js
+|   |       |       PlaneGeometry.js
+|   |       |       PolyhedronGeometry.js
+|   |       |       RingGeometry.js
+|   |       |       ShapeGeometry.js
+|   |       |       SphereGeometry.js
+|   |       |       TetrahedronGeometry.js
+|   |       |       TorusGeometry.js
+|   |       |       TorusKnotGeometry.js
+|   |       |       TubeGeometry.js
+|   |       |       WireframeGeometry.js
+|   |       |       
+|   |       +---helpers
+|   |       |       ArrowHelper.js
+|   |       |       AxesHelper.js
+|   |       |       Box3Helper.js
+|   |       |       BoxHelper.js
+|   |       |       CameraHelper.js
+|   |       |       DirectionalLightHelper.js
+|   |       |       GridHelper.js
+|   |       |       HemisphereLightHelper.js
+|   |       |       PlaneHelper.js
+|   |       |       PointLightHelper.js
+|   |       |       PolarGridHelper.js
+|   |       |       SkeletonHelper.js
+|   |       |       SpotLightHelper.js
+|   |       |       
+|   |       +---lights
+|   |       |   |   AmbientLight.js
+|   |       |   |   DirectionalLight.js
+|   |       |   |   DirectionalLightShadow.js
+|   |       |   |   HemisphereLight.js
+|   |       |   |   Light.js
+|   |       |   |   LightProbe.js
+|   |       |   |   LightShadow.js
+|   |       |   |   PointLight.js
+|   |       |   |   PointLightShadow.js
+|   |       |   |   RectAreaLight.js
+|   |       |   |   SpotLight.js
+|   |       |   |   SpotLightShadow.js
+|   |       |   |   
+|   |       |   \---webgpu
+|   |       |           IESSpotLight.js
+|   |       |           ProjectorLight.js
+|   |       |           
+|   |       +---loaders
+|   |       |   |   AnimationLoader.js
+|   |       |   |   AudioLoader.js
+|   |       |   |   BufferGeometryLoader.js
+|   |       |   |   Cache.js
+|   |       |   |   CompressedTextureLoader.js
+|   |       |   |   CubeTextureLoader.js
+|   |       |   |   DataTextureLoader.js
+|   |       |   |   FileLoader.js
+|   |       |   |   ImageBitmapLoader.js
+|   |       |   |   ImageLoader.js
+|   |       |   |   Loader.js
+|   |       |   |   LoaderUtils.js
+|   |       |   |   LoadingManager.js
+|   |       |   |   MaterialLoader.js
+|   |       |   |   ObjectLoader.js
+|   |       |   |   TextureLoader.js
+|   |       |   |   
+|   |       |   \---nodes
+|   |       |           NodeLoader.js
+|   |       |           NodeMaterialLoader.js
+|   |       |           NodeObjectLoader.js
+|   |       |           
+|   |       +---materials
+|   |       |   |   LineBasicMaterial.js
+|   |       |   |   LineDashedMaterial.js
+|   |       |   |   Material.js
+|   |       |   |   Materials.js
+|   |       |   |   MeshBasicMaterial.js
+|   |       |   |   MeshDepthMaterial.js
+|   |       |   |   MeshDistanceMaterial.js
+|   |       |   |   MeshLambertMaterial.js
+|   |       |   |   MeshMatcapMaterial.js
+|   |       |   |   MeshNormalMaterial.js
+|   |       |   |   MeshPhongMaterial.js
+|   |       |   |   MeshPhysicalMaterial.js
+|   |       |   |   MeshStandardMaterial.js
+|   |       |   |   MeshToonMaterial.js
+|   |       |   |   PointsMaterial.js
+|   |       |   |   RawShaderMaterial.js
+|   |       |   |   ShaderMaterial.js
+|   |       |   |   ShadowMaterial.js
+|   |       |   |   SpriteMaterial.js
+|   |       |   |   
+|   |       |   \---nodes
+|   |       |       |   Line2NodeMaterial.js
+|   |       |       |   LineBasicNodeMaterial.js
+|   |       |       |   LineDashedNodeMaterial.js
+|   |       |       |   MeshBasicNodeMaterial.js
+|   |       |       |   MeshLambertNodeMaterial.js
+|   |       |       |   MeshMatcapNodeMaterial.js
+|   |       |       |   MeshNormalNodeMaterial.js
+|   |       |       |   MeshPhongNodeMaterial.js
+|   |       |       |   MeshPhysicalNodeMaterial.js
+|   |       |       |   MeshSSSNodeMaterial.js
+|   |       |       |   MeshStandardNodeMaterial.js
+|   |       |       |   MeshToonNodeMaterial.js
+|   |       |       |   NodeMaterial.js
+|   |       |       |   NodeMaterials.js
+|   |       |       |   PointsNodeMaterial.js
+|   |       |       |   ShadowNodeMaterial.js
+|   |       |       |   SpriteNodeMaterial.js
+|   |       |       |   VolumeNodeMaterial.js
+|   |       |       |   
+|   |       |       \---manager
+|   |       |               NodeMaterialObserver.js
+|   |       |               
+|   |       +---math
+|   |       |   |   Box2.js
+|   |       |   |   Box3.js
+|   |       |   |   Color.js
+|   |       |   |   ColorManagement.js
+|   |       |   |   Cylindrical.js
+|   |       |   |   Euler.js
+|   |       |   |   Frustum.js
+|   |       |   |   FrustumArray.js
+|   |       |   |   Interpolant.js
+|   |       |   |   Line3.js
+|   |       |   |   MathUtils.js
+|   |       |   |   Matrix2.js
+|   |       |   |   Matrix3.js
+|   |       |   |   Matrix4.js
+|   |       |   |   Plane.js
+|   |       |   |   Quaternion.js
+|   |       |   |   Ray.js
+|   |       |   |   Sphere.js
+|   |       |   |   Spherical.js
+|   |       |   |   SphericalHarmonics3.js
+|   |       |   |   Triangle.js
+|   |       |   |   Vector2.js
+|   |       |   |   Vector3.js
+|   |       |   |   Vector4.js
+|   |       |   |   
+|   |       |   \---interpolants
+|   |       |           BezierInterpolant.js
+|   |       |           CubicInterpolant.js
+|   |       |           DiscreteInterpolant.js
+|   |       |           LinearInterpolant.js
+|   |       |           QuaternionLinearInterpolant.js
+|   |       |           
+|   |       +---nodes
+|   |       |   |   Nodes.js
+|   |       |   |   TSL.js
+|   |       |   |   
+|   |       |   +---accessors
+|   |       |   |       AccessorsUtils.js
+|   |       |   |       Arrays.js
+|   |       |   |       Batch.js
+|   |       |   |       Bitangent.js
+|   |       |   |       BufferAttributeNode.js
+|   |       |   |       BufferNode.js
+|   |       |   |       BuiltinNode.js
+|   |       |   |       Camera.js
+|   |       |   |       ClippingNode.js
+|   |       |   |       CubeTextureNode.js
+|   |       |   |       Instance.js
+|   |       |   |       Lights.js
+|   |       |   |       MaterialNode.js
+|   |       |   |       MaterialProperties.js
+|   |       |   |       MaterialReferenceNode.js
+|   |       |   |       ModelNode.js
+|   |       |   |       ModelViewProjectionNode.js
+|   |       |   |       Morph.js
+|   |       |   |       Normal.js
+|   |       |   |       Object3DNode.js
+|   |       |   |       PointUVNode.js
+|   |       |   |       Position.js
+|   |       |   |       ReferenceBaseNode.js
+|   |       |   |       ReferenceNode.js
+|   |       |   |       ReflectVector.js
+|   |       |   |       RendererReferenceNode.js
+|   |       |   |       SceneProperties.js
+|   |       |   |       Skinning.js
+|   |       |   |       StorageBufferNode.js
+|   |       |   |       StorageTexture3DNode.js
+|   |       |   |       StorageTextureNode.js
+|   |       |   |       Tangent.js
+|   |       |   |       TangentUtils.js
+|   |       |   |       Texture3DNode.js
+|   |       |   |       TextureBicubic.js
+|   |       |   |       TextureNode.js
+|   |       |   |       TextureSizeNode.js
+|   |       |   |       UniformArrayNode.js
+|   |       |   |       UserDataNode.js
+|   |       |   |       UV.js
+|   |       |   |       VelocityNode.js
+|   |       |   |       VertexColorNode.js
+|   |       |   |       
+|   |       |   +---code
+|   |       |   |       CodeNode.js
+|   |       |   |       ExpressionNode.js
+|   |       |   |       FunctionCallNode.js
+|   |       |   |       FunctionNode.js
+|   |       |   |       
+|   |       |   +---core
+|   |       |   |       ArrayNode.js
+|   |       |   |       AssignNode.js
+|   |       |   |       AttributeNode.js
+|   |       |   |       BypassNode.js
+|   |       |   |       constants.js
+|   |       |   |       ConstNode.js
+|   |       |   |       ContextNode.js
+|   |       |   |       IndexNode.js
+|   |       |   |       InputNode.js
+|   |       |   |       InspectorNode.js
+|   |       |   |       IsolateNode.js
+|   |       |   |       LightingModel.js
+|   |       |   |       MRTNode.js
+|   |       |   |       Node.js
+|   |       |   |       NodeAttribute.js
+|   |       |   |       NodeBuilder.js
+|   |       |   |       NodeCache.js
+|   |       |   |       NodeCode.js
+|   |       |   |       NodeError.js
+|   |       |   |       NodeFrame.js
+|   |       |   |       NodeFunction.js
+|   |       |   |       NodeFunctionInput.js
+|   |       |   |       NodeParser.js
+|   |       |   |       NodeUniform.js
+|   |       |   |       NodeUtils.js
+|   |       |   |       NodeVar.js
+|   |       |   |       NodeVarying.js
+|   |       |   |       OutputStructNode.js
+|   |       |   |       OverrideContextNode.js
+|   |       |   |       ParameterNode.js
+|   |       |   |       PropertyNode.js
+|   |       |   |       StackNode.js
+|   |       |   |       StackTrace.js
+|   |       |   |       StructNode.js
+|   |       |   |       StructType.js
+|   |       |   |       StructTypeNode.js
+|   |       |   |       SubBuildNode.js
+|   |       |   |       TempNode.js
+|   |       |   |       UniformGroupNode.js
+|   |       |   |       UniformNode.js
+|   |       |   |       VarNode.js
+|   |       |   |       VaryingNode.js
+|   |       |   |       
+|   |       |   +---display
+|   |       |   |       BlendModes.js
+|   |       |   |       BumpMapNode.js
+|   |       |   |       ColorAdjustment.js
+|   |       |   |       ColorSpaceFunctions.js
+|   |       |   |       ColorSpaceNode.js
+|   |       |   |       FrontFacingNode.js
+|   |       |   |       NormalMapNode.js
+|   |       |   |       PassNode.js
+|   |       |   |       PremultiplyAlphaFunctions.js
+|   |       |   |       RenderOutputNode.js
+|   |       |   |       ScreenNode.js
+|   |       |   |       ToneMappingFunctions.js
+|   |       |   |       ToneMappingNode.js
+|   |       |   |       ToonOutlinePassNode.js
+|   |       |   |       ViewportDepthNode.js
+|   |       |   |       ViewportDepthTextureNode.js
+|   |       |   |       ViewportSharedTextureNode.js
+|   |       |   |       ViewportTextureNode.js
+|   |       |   |       
+|   |       |   +---fog
+|   |       |   |       Fog.js
+|   |       |   |       
+|   |       |   +---functions
+|   |       |   |   |   BasicLightingModel.js
+|   |       |   |   |   PhongLightingModel.js
+|   |       |   |   |   PhysicalLightingModel.js
+|   |       |   |   |   ShadowMaskModel.js
+|   |       |   |   |   ToonLightingModel.js
+|   |       |   |   |   VolumetricLightingModel.js
+|   |       |   |   |   
+|   |       |   |   +---BSDF
+|   |       |   |   |       BRDF_GGX.js
+|   |       |   |   |       BRDF_GGX_Multiscatter.js
+|   |       |   |   |       BRDF_Lambert.js
+|   |       |   |   |       BRDF_Sheen.js
+|   |       |   |   |       DFGLUT.js
+|   |       |   |   |       D_GGX.js
+|   |       |   |   |       D_GGX_Anisotropic.js
+|   |       |   |   |       EnvironmentBRDF.js
+|   |       |   |   |       F_Schlick.js
+|   |       |   |   |       LTC.js
+|   |       |   |   |       Schlick_to_F0.js
+|   |       |   |   |       V_GGX_SmithCorrelated.js
+|   |       |   |   |       V_GGX_SmithCorrelated_Anisotropic.js
+|   |       |   |   |       
+|   |       |   |   \---material
+|   |       |   |           getAlphaHashThreshold.js
+|   |       |   |           getGeometryRoughness.js
+|   |       |   |           getParallaxCorrectNormal.js
+|   |       |   |           getRoughness.js
+|   |       |   |           getShIrradianceAt.js
+|   |       |   |           
+|   |       |   +---geometry
+|   |       |   |       RangeNode.js
+|   |       |   |       
+|   |       |   +---gpgpu
+|   |       |   |       AtomicFunctionNode.js
+|   |       |   |       BarrierNode.js
+|   |       |   |       ComputeBuiltinNode.js
+|   |       |   |       ComputeNode.js
+|   |       |   |       SubgroupFunctionNode.js
+|   |       |   |       WorkgroupInfoNode.js
+|   |       |   |       
+|   |       |   +---lighting
+|   |       |   |       AmbientLightNode.js
+|   |       |   |       AnalyticLightNode.js
+|   |       |   |       AONode.js
+|   |       |   |       BasicEnvironmentNode.js
+|   |       |   |       BasicLightMapNode.js
+|   |       |   |       DirectionalLightNode.js
+|   |       |   |       EnvironmentNode.js
+|   |       |   |       HemisphereLightNode.js
+|   |       |   |       IESSpotLightNode.js
+|   |       |   |       IrradianceNode.js
+|   |       |   |       LightingContextNode.js
+|   |       |   |       LightingNode.js
+|   |       |   |       LightProbeNode.js
+|   |       |   |       LightsNode.js
+|   |       |   |       LightUtils.js
+|   |       |   |       PointLightNode.js
+|   |       |   |       PointShadowNode.js
+|   |       |   |       ProjectorLightNode.js
+|   |       |   |       RectAreaLightNode.js
+|   |       |   |       ShadowBaseNode.js
+|   |       |   |       ShadowFilterNode.js
+|   |       |   |       ShadowNode.js
+|   |       |   |       SpotLightNode.js
+|   |       |   |       
+|   |       |   +---materialx
+|   |       |   |   |   DISCLAIMER.md
+|   |       |   |   |   MaterialXNodes.js
+|   |       |   |   |   
+|   |       |   |   \---lib
+|   |       |   |           mx_hsv.js
+|   |       |   |           mx_noise.js
+|   |       |   |           mx_transform_color.js
+|   |       |   |           
+|   |       |   +---math
+|   |       |   |       BitcastNode.js
+|   |       |   |       BitcountNode.js
+|   |       |   |       ConditionalNode.js
+|   |       |   |       Hash.js
+|   |       |   |       MathNode.js
+|   |       |   |       MathUtils.js
+|   |       |   |       OperatorNode.js
+|   |       |   |       PackFloatNode.js
+|   |       |   |       TriNoise3D.js
+|   |       |   |       UnpackFloatNode.js
+|   |       |   |       
+|   |       |   +---parsers
+|   |       |   |       GLSLNodeFunction.js
+|   |       |   |       GLSLNodeParser.js
+|   |       |   |       
+|   |       |   +---pmrem
+|   |       |   |       PMREMNode.js
+|   |       |   |       PMREMUtils.js
+|   |       |   |       
+|   |       |   +---procedural
+|   |       |   |       Checker.js
+|   |       |   |       
+|   |       |   +---shapes
+|   |       |   |       Shapes.js
+|   |       |   |       
+|   |       |   +---tsl
+|   |       |   |       TSLBase.js
+|   |       |   |       TSLCore.js
+|   |       |   |       
+|   |       |   \---utils
+|   |       |           ArrayElementNode.js
+|   |       |           ConvertNode.js
+|   |       |           CubeMapNode.js
+|   |       |           DebugNode.js
+|   |       |           Discard.js
+|   |       |           EquirectUV.js
+|   |       |           EventNode.js
+|   |       |           FlipNode.js
+|   |       |           FunctionOverloadingNode.js
+|   |       |           JoinNode.js
+|   |       |           LoopNode.js
+|   |       |           MatcapUV.js
+|   |       |           MaxMipLevelNode.js
+|   |       |           MemberNode.js
+|   |       |           Oscillators.js
+|   |       |           Packing.js
+|   |       |           PostProcessingUtils.js
+|   |       |           ReflectorNode.js
+|   |       |           Remap.js
+|   |       |           RotateNode.js
+|   |       |           RTTNode.js
+|   |       |           SampleNode.js
+|   |       |           SetNode.js
+|   |       |           SplitNode.js
+|   |       |           SpriteSheetUV.js
+|   |       |           SpriteUtils.js
+|   |       |           StorageArrayElementNode.js
+|   |       |           Timer.js
+|   |       |           TriplanarTextures.js
+|   |       |           UVUtils.js
+|   |       |           ViewportUtils.js
+|   |       |           
+|   |       +---objects
+|   |       |       BatchedMesh.js
+|   |       |       Bone.js
+|   |       |       ClippingGroup.js
+|   |       |       Group.js
+|   |       |       InstancedMesh.js
+|   |       |       Line.js
+|   |       |       LineLoop.js
+|   |       |       LineSegments.js
+|   |       |       LOD.js
+|   |       |       Mesh.js
+|   |       |       Points.js
+|   |       |       Skeleton.js
+|   |       |       SkinnedMesh.js
+|   |       |       Sprite.js
+|   |       |       
+|   |       +---renderers
+|   |       |   |   WebGL3DRenderTarget.js
+|   |       |   |   WebGLArrayRenderTarget.js
+|   |       |   |   WebGLCubeRenderTarget.js
+|   |       |   |   WebGLRenderer.js
+|   |       |   |   WebGLRenderTarget.js
+|   |       |   |   
+|   |       |   +---common
+|   |       |   |   |   Animation.js
+|   |       |   |   |   Attributes.js
+|   |       |   |   |   Backend.js
+|   |       |   |   |   Background.js
+|   |       |   |   |   BindGroup.js
+|   |       |   |   |   Binding.js
+|   |       |   |   |   Bindings.js
+|   |       |   |   |   BlendMode.js
+|   |       |   |   |   Buffer.js
+|   |       |   |   |   BufferUtils.js
+|   |       |   |   |   BundleGroup.js
+|   |       |   |   |   CanvasTarget.js
+|   |       |   |   |   ChainMap.js
+|   |       |   |   |   ClippingContext.js
+|   |       |   |   |   Color4.js
+|   |       |   |   |   ComputePipeline.js
+|   |       |   |   |   Constants.js
+|   |       |   |   |   CubeRenderTarget.js
+|   |       |   |   |   DataMap.js
+|   |       |   |   |   Geometries.js
+|   |       |   |   |   IndirectStorageBufferAttribute.js
+|   |       |   |   |   Info.js
+|   |       |   |   |   InspectorBase.js
+|   |       |   |   |   Lighting.js
+|   |       |   |   |   Pipeline.js
+|   |       |   |   |   Pipelines.js
+|   |       |   |   |   PostProcessing.js
+|   |       |   |   |   ProgrammableStage.js
+|   |       |   |   |   QuadMesh.js
+|   |       |   |   |   ReadbackBuffer.js
+|   |       |   |   |   RenderBundle.js
+|   |       |   |   |   RenderBundles.js
+|   |       |   |   |   RenderContext.js
+|   |       |   |   |   RenderContexts.js
+|   |       |   |   |   Renderer.js
+|   |       |   |   |   RendererUtils.js
+|   |       |   |   |   RenderList.js
+|   |       |   |   |   RenderLists.js
+|   |       |   |   |   RenderObject.js
+|   |       |   |   |   RenderObjectPipeline.js
+|   |       |   |   |   RenderObjects.js
+|   |       |   |   |   RenderPipeline.js
+|   |       |   |   |   SampledTexture.js
+|   |       |   |   |   Sampler.js
+|   |       |   |   |   Storage3DTexture.js
+|   |       |   |   |   StorageArrayTexture.js
+|   |       |   |   |   StorageBuffer.js
+|   |       |   |   |   StorageBufferAttribute.js
+|   |       |   |   |   StorageInstancedBufferAttribute.js
+|   |       |   |   |   StorageTexture.js
+|   |       |   |   |   Textures.js
+|   |       |   |   |   TimestampQueryPool.js
+|   |       |   |   |   Uniform.js
+|   |       |   |   |   UniformBuffer.js
+|   |       |   |   |   UniformsGroup.js
+|   |       |   |   |   XRManager.js
+|   |       |   |   |   XRRenderTarget.js
+|   |       |   |   |   
+|   |       |   |   +---extras
+|   |       |   |   |       PMREMGenerator.js
+|   |       |   |   |       
+|   |       |   |   \---nodes
+|   |       |   |           NodeBuilderState.js
+|   |       |   |           NodeLibrary.js
+|   |       |   |           NodeManager.js
+|   |       |   |           NodeSampledTexture.js
+|   |       |   |           NodeSampler.js
+|   |       |   |           NodeStorageBuffer.js
+|   |       |   |           NodeUniform.js
+|   |       |   |           NodeUniformBuffer.js
+|   |       |   |           NodeUniformsGroup.js
+|   |       |   |           
+|   |       |   +---shaders
+|   |       |   |   |   DFGLUTData.js
+|   |       |   |   |   ShaderChunk.js
+|   |       |   |   |   ShaderLib.js
+|   |       |   |   |   UniformsLib.js
+|   |       |   |   |   UniformsUtils.js
+|   |       |   |   |   
+|   |       |   |   +---ShaderChunk
+|   |       |   |   |       alphahash_fragment.glsl.js
+|   |       |   |   |       alphahash_pars_fragment.glsl.js
+|   |       |   |   |       alphamap_fragment.glsl.js
+|   |       |   |   |       alphamap_pars_fragment.glsl.js
+|   |       |   |   |       alphatest_fragment.glsl.js
+|   |       |   |   |       alphatest_pars_fragment.glsl.js
+|   |       |   |   |       aomap_fragment.glsl.js
+|   |       |   |   |       aomap_pars_fragment.glsl.js
+|   |       |   |   |       batching_pars_vertex.glsl.js
+|   |       |   |   |       batching_vertex.glsl.js
+|   |       |   |   |       beginnormal_vertex.glsl.js
+|   |       |   |   |       begin_vertex.glsl.js
+|   |       |   |   |       bsdfs.glsl.js
+|   |       |   |   |       bumpmap_pars_fragment.glsl.js
+|   |       |   |   |       clearcoat_normal_fragment_begin.glsl.js
+|   |       |   |   |       clearcoat_normal_fragment_maps.glsl.js
+|   |       |   |   |       clearcoat_pars_fragment.glsl.js
+|   |       |   |   |       clipping_planes_fragment.glsl.js
+|   |       |   |   |       clipping_planes_pars_fragment.glsl.js
+|   |       |   |   |       clipping_planes_pars_vertex.glsl.js
+|   |       |   |   |       clipping_planes_vertex.glsl.js
+|   |       |   |   |       colorspace_fragment.glsl.js
+|   |       |   |   |       colorspace_pars_fragment.glsl.js
+|   |       |   |   |       color_fragment.glsl.js
+|   |       |   |   |       color_pars_fragment.glsl.js
+|   |       |   |   |       color_pars_vertex.glsl.js
+|   |       |   |   |       color_vertex.glsl.js
+|   |       |   |   |       common.glsl.js
+|   |       |   |   |       cube_uv_reflection_fragment.glsl.js
+|   |       |   |   |       defaultnormal_vertex.glsl.js
+|   |       |   |   |       default_fragment.glsl.js
+|   |       |   |   |       default_vertex.glsl.js
+|   |       |   |   |       displacementmap_pars_vertex.glsl.js
+|   |       |   |   |       displacementmap_vertex.glsl.js
+|   |       |   |   |       dithering_fragment.glsl.js
+|   |       |   |   |       dithering_pars_fragment.glsl.js
+|   |       |   |   |       emissivemap_fragment.glsl.js
+|   |       |   |   |       emissivemap_pars_fragment.glsl.js
+|   |       |   |   |       envmap_common_pars_fragment.glsl.js
+|   |       |   |   |       envmap_fragment.glsl.js
+|   |       |   |   |       envmap_pars_fragment.glsl.js
+|   |       |   |   |       envmap_pars_vertex.glsl.js
+|   |       |   |   |       envmap_physical_pars_fragment.glsl.js
+|   |       |   |   |       envmap_vertex.glsl.js
+|   |       |   |   |       fog_fragment.glsl.js
+|   |       |   |   |       fog_pars_fragment.glsl.js
+|   |       |   |   |       fog_pars_vertex.glsl.js
+|   |       |   |   |       fog_vertex.glsl.js
+|   |       |   |   |       gradientmap_pars_fragment.glsl.js
+|   |       |   |   |       iridescence_fragment.glsl.js
+|   |       |   |   |       iridescence_pars_fragment.glsl.js
+|   |       |   |   |       lightmap_pars_fragment.glsl.js
+|   |       |   |   |       lightprobes_pars_fragment.glsl.js
+|   |       |   |   |       lights_fragment_begin.glsl.js
+|   |       |   |   |       lights_fragment_end.glsl.js
+|   |       |   |   |       lights_fragment_maps.glsl.js
+|   |       |   |   |       lights_lambert_fragment.glsl.js
+|   |       |   |   |       lights_lambert_pars_fragment.glsl.js
+|   |       |   |   |       lights_pars_begin.glsl.js
+|   |       |   |   |       lights_phong_fragment.glsl.js
+|   |       |   |   |       lights_phong_pars_fragment.glsl.js
+|   |       |   |   |       lights_physical_fragment.glsl.js
+|   |       |   |   |       lights_physical_pars_fragment.glsl.js
+|   |       |   |   |       lights_toon_fragment.glsl.js
+|   |       |   |   |       lights_toon_pars_fragment.glsl.js
+|   |       |   |   |       logdepthbuf_fragment.glsl.js
+|   |       |   |   |       logdepthbuf_pars_fragment.glsl.js
+|   |       |   |   |       logdepthbuf_pars_vertex.glsl.js
+|   |       |   |   |       logdepthbuf_vertex.glsl.js
+|   |       |   |   |       map_fragment.glsl.js
+|   |       |   |   |       map_pars_fragment.glsl.js
+|   |       |   |   |       map_particle_fragment.glsl.js
+|   |       |   |   |       map_particle_pars_fragment.glsl.js
+|   |       |   |   |       metalnessmap_fragment.glsl.js
+|   |       |   |   |       metalnessmap_pars_fragment.glsl.js
+|   |       |   |   |       morphcolor_vertex.glsl.js
+|   |       |   |   |       morphinstance_vertex.glsl.js
+|   |       |   |   |       morphnormal_vertex.glsl.js
+|   |       |   |   |       morphtarget_pars_vertex.glsl.js
+|   |       |   |   |       morphtarget_vertex.glsl.js
+|   |       |   |   |       normalmap_pars_fragment.glsl.js
+|   |       |   |   |       normal_fragment_begin.glsl.js
+|   |       |   |   |       normal_fragment_maps.glsl.js
+|   |       |   |   |       normal_pars_fragment.glsl.js
+|   |       |   |   |       normal_pars_vertex.glsl.js
+|   |       |   |   |       normal_vertex.glsl.js
+|   |       |   |   |       opaque_fragment.glsl.js
+|   |       |   |   |       packing.glsl.js
+|   |       |   |   |       premultiplied_alpha_fragment.glsl.js
+|   |       |   |   |       project_vertex.glsl.js
+|   |       |   |   |       roughnessmap_fragment.glsl.js
+|   |       |   |   |       roughnessmap_pars_fragment.glsl.js
+|   |       |   |   |       shadowmap_pars_fragment.glsl.js
+|   |       |   |   |       shadowmap_pars_vertex.glsl.js
+|   |       |   |   |       shadowmap_vertex.glsl.js
+|   |       |   |   |       shadowmask_pars_fragment.glsl.js
+|   |       |   |   |       skinbase_vertex.glsl.js
+|   |       |   |   |       skinning_pars_vertex.glsl.js
+|   |       |   |   |       skinning_vertex.glsl.js
+|   |       |   |   |       skinnormal_vertex.glsl.js
+|   |       |   |   |       specularmap_fragment.glsl.js
+|   |       |   |   |       specularmap_pars_fragment.glsl.js
+|   |       |   |   |       tonemapping_fragment.glsl.js
+|   |       |   |   |       tonemapping_pars_fragment.glsl.js
+|   |       |   |   |       transmission_fragment.glsl.js
+|   |       |   |   |       transmission_pars_fragment.glsl.js
+|   |       |   |   |       uv_pars_fragment.glsl.js
+|   |       |   |   |       uv_pars_vertex.glsl.js
+|   |       |   |   |       uv_vertex.glsl.js
+|   |       |   |   |       worldpos_vertex.glsl.js
+|   |       |   |   |       
+|   |       |   |   \---ShaderLib
+|   |       |   |           background.glsl.js
+|   |       |   |           backgroundCube.glsl.js
+|   |       |   |           cube.glsl.js
+|   |       |   |           depth.glsl.js
+|   |       |   |           distance.glsl.js
+|   |       |   |           equirect.glsl.js
+|   |       |   |           linedashed.glsl.js
+|   |       |   |           meshbasic.glsl.js
+|   |       |   |           meshlambert.glsl.js
+|   |       |   |           meshmatcap.glsl.js
+|   |       |   |           meshnormal.glsl.js
+|   |       |   |           meshphong.glsl.js
+|   |       |   |           meshphysical.glsl.js
+|   |       |   |           meshtoon.glsl.js
+|   |       |   |           points.glsl.js
+|   |       |   |           shadow.glsl.js
+|   |       |   |           sprite.glsl.js
+|   |       |   |           vsm.glsl.js
+|   |       |   |           
+|   |       |   +---webgl
+|   |       |   |       WebGLAnimation.js
+|   |       |   |       WebGLAttributes.js
+|   |       |   |       WebGLBackground.js
+|   |       |   |       WebGLBindingStates.js
+|   |       |   |       WebGLBufferRenderer.js
+|   |       |   |       WebGLCapabilities.js
+|   |       |   |       WebGLClipping.js
+|   |       |   |       WebGLEnvironments.js
+|   |       |   |       WebGLExtensions.js
+|   |       |   |       WebGLGeometries.js
+|   |       |   |       WebGLIndexedBufferRenderer.js
+|   |       |   |       WebGLInfo.js
+|   |       |   |       WebGLLights.js
+|   |       |   |       WebGLMaterials.js
+|   |       |   |       WebGLMorphtargets.js
+|   |       |   |       WebGLObjects.js
+|   |       |   |       WebGLOutput.js
+|   |       |   |       WebGLProgram.js
+|   |       |   |       WebGLPrograms.js
+|   |       |   |       WebGLProperties.js
+|   |       |   |       WebGLRenderLists.js
+|   |       |   |       WebGLRenderStates.js
+|   |       |   |       WebGLShader.js
+|   |       |   |       WebGLShaderCache.js
+|   |       |   |       WebGLShadowMap.js
+|   |       |   |       WebGLState.js
+|   |       |   |       WebGLTextures.js
+|   |       |   |       WebGLUniforms.js
+|   |       |   |       WebGLUniformsGroups.js
+|   |       |   |       WebGLUtils.js
+|   |       |   |       
+|   |       |   +---webgl-fallback
+|   |       |   |   |   WebGLBackend.js
+|   |       |   |   |   WebGLBufferRenderer.js
+|   |       |   |   |   
+|   |       |   |   +---nodes
+|   |       |   |   |       GLSLNodeBuilder.js
+|   |       |   |   |       
+|   |       |   |   \---utils
+|   |       |   |           WebGLAttributeUtils.js
+|   |       |   |           WebGLCapabilities.js
+|   |       |   |           WebGLConstants.js
+|   |       |   |           WebGLExtensions.js
+|   |       |   |           WebGLState.js
+|   |       |   |           WebGLTextureUtils.js
+|   |       |   |           WebGLTimestampQueryPool.js
+|   |       |   |           WebGLUtils.js
+|   |       |   |           
+|   |       |   +---webgpu
+|   |       |   |   |   WebGPUBackend.js
+|   |       |   |   |   WebGPURenderer.js
+|   |       |   |   |   WebGPURenderer.Nodes.js
+|   |       |   |   |   
+|   |       |   |   +---descriptors
+|   |       |   |   |       GPUBindGroupDescriptor.js
+|   |       |   |   |       GPUBufferDescriptor.js
+|   |       |   |   |       GPUCommandEncoderDescriptor.js
+|   |       |   |   |       GPUComputePassDescriptor.js
+|   |       |   |   |       GPUComputePipelineDescriptor.js
+|   |       |   |   |       GPUCopyExternalImageDestInfo.js
+|   |       |   |   |       GPUCopyExternalImageSourceInfo.js
+|   |       |   |   |       GPUExtent3D.js
+|   |       |   |   |       GPUPipelineLayoutDescriptor.js
+|   |       |   |   |       GPUQuerySetDescriptor.js
+|   |       |   |   |       GPURenderBundleEncoderDescriptor.js
+|   |       |   |   |       GPURenderPassColorAttachment.js
+|   |       |   |   |       GPURenderPassDepthStencilAttachment.js
+|   |       |   |   |       GPURenderPassDescriptor.js
+|   |       |   |   |       GPURenderPassTimestampWrites.js
+|   |       |   |   |       GPURenderPipelineDescriptor.js
+|   |       |   |   |       GPUSamplerDescriptor.js
+|   |       |   |   |       GPUShaderModuleDescriptor.js
+|   |       |   |   |       GPUTexelCopyBufferInfo.js
+|   |       |   |   |       GPUTexelCopyBufferLayout.js
+|   |       |   |   |       GPUTexelCopyTextureInfo.js
+|   |       |   |   |       GPUTextureDescriptor.js
+|   |       |   |   |       GPUTextureViewDescriptor.js
+|   |       |   |   |       
+|   |       |   |   +---nodes
+|   |       |   |   |       BasicNodeLibrary.js
+|   |       |   |   |       StandardNodeLibrary.js
+|   |       |   |   |       WGSLNodeBuilder.js
+|   |       |   |   |       WGSLNodeFunction.js
+|   |       |   |   |       WGSLNodeParser.js
+|   |       |   |   |       
+|   |       |   |   \---utils
+|   |       |   |           WebGPUAttributeUtils.js
+|   |       |   |           WebGPUBindingUtils.js
+|   |       |   |           WebGPUCapabilities.js
+|   |       |   |           WebGPUConstants.js
+|   |       |   |           WebGPUPipelineUtils.js
+|   |       |   |           WebGPUTexturePassUtils.js
+|   |       |   |           WebGPUTextureUtils.js
+|   |       |   |           WebGPUTimestampQueryPool.js
+|   |       |   |           WebGPUUtils.js
+|   |       |   |           
+|   |       |   \---webxr
+|   |       |           WebXRController.js
+|   |       |           WebXRDepthSensing.js
+|   |       |           WebXRManager.js
+|   |       |           
+|   |       +---scenes
+|   |       |       Fog.js
+|   |       |       FogExp2.js
+|   |       |       Scene.js
+|   |       |       
+|   |       \---textures
+|   |               CanvasTexture.js
+|   |               CompressedArrayTexture.js
+|   |               CompressedCubeTexture.js
+|   |               CompressedTexture.js
+|   |               CubeDepthTexture.js
+|   |               CubeTexture.js
+|   |               Data3DTexture.js
+|   |               DataArrayTexture.js
+|   |               DataTexture.js
+|   |               DepthTexture.js
+|   |               ExternalTexture.js
+|   |               FramebufferTexture.js
+|   |               HTMLTexture.js
+|   |               Source.js
+|   |               Texture.js
+|   |               VideoFrameTexture.js
+|   |               VideoTexture.js
+|   |               
+|   +---tinyglobby
+|   |   |   LICENSE
+|   |   |   package.json
+|   |   |   README.md
+|   |   |   
+|   |   \---dist
+|   |           index.cjs
+|   |           index.d.cts
+|   |           index.d.mts
+|   |           index.mjs
+|   |           
+|   +---tslib
+|   |   |   CopyrightNotice.txt
+|   |   |   LICENSE.txt
+|   |   |   package.json
+|   |   |   README.md
+|   |   |   SECURITY.md
+|   |   |   tslib.d.ts
+|   |   |   tslib.es6.html
+|   |   |   tslib.es6.js
+|   |   |   tslib.es6.mjs
+|   |   |   tslib.html
+|   |   |   tslib.js
+|   |   |   
+|   |   \---modules
+|   |           index.d.ts
+|   |           index.js
+|   |           package.json
+|   |           
+|   \---vite
+|       |   client.d.ts
+|       |   LICENSE.md
+|       |   package.json
+|       |   README.md
+|       |   
+|       +---bin
+|       |       openChrome.js
+|       |       vite.js
+|       |       
+|       +---dist
+|       |   +---client
+|       |   |       client.mjs
+|       |   |       env.mjs
+|       |   |       
+|       |   \---node
+|       |       |   cli.js
+|       |       |   index.d.ts
+|       |       |   index.js
+|       |       |   internal.d.ts
+|       |       |   internal.js
+|       |       |   module-runner.d.ts
+|       |       |   module-runner.js
+|       |       |   
+|       |       \---chunks
+|       |               build.js
+|       |               dist.js
+|       |               lib.js
+|       |               moduleRunnerTransport.d.ts
+|       |               node.js
+|       |               postcss-import.js
+|       |               
+|       +---misc
+|       |       false.js
+|       |       true.js
+|       |       
+|       \---types
+|           |   customEvent.d.ts
+|           |   hmrPayload.d.ts
+|           |   hot.d.ts
+|           |   import-meta.d.ts
+|           |   importGlob.d.ts
+|           |   importMeta.d.ts
+|           |   metadata.d.ts
+|           |   
+|           \---internal
+|                   cssPreprocessorOptions.d.ts
+|                   esbuildOptions.d.ts
+|                   lightningcssOptions.d.ts
+|                   rollupTypeCompat.d.ts
+|                   terserOptions.d.ts
+|                   
++---public
+|   |   favicon.svg
+|   |   
+|   \---models
+|           laptop.glb
+|           laptop.gltf
+|           
+\---src
+    +---images
+    |       laptop-photo.png
+    |       neo-logo.png
+    |       
+    +---js
+    |   |   main.js
+    |   |   section-loader.js
+    |   |   
+    |   \---animations
+    |           comparison.js
+    |           services.js
+    |           
+    +---sections
+    |       about.html
+    |       comparison.html
+    |       contact.html
+    |       hero.html
+    |       services.html
+    |       
+    +---styles
+    |       main.css
+    |       
+    \---three
+            createLaptop.js
+            setupScene.js
+            

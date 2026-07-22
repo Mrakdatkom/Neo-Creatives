@@ -5,6 +5,7 @@ export default defineConfig({
   plugins: [
     tailwindcss(),
   ],
+  base: '/',
   server: {
     open: true,
   },
@@ -14,5 +15,8 @@ export default defineConfig({
         main: 'index.html',
       },
     },
+    outDir: 'dist',
+    assetsDir: 'assets',
   },
+  publicDir: 'public',
 });
