@@ -210,9 +210,27 @@ function setupAnimations() {
   }
 }
 
-// Handle contact form (use event delegation since it might load dynamically)
+// Add this before your form handler
+function validateForm(data) {
+  const errors = [];
+
+  if (!data.name || data.name.trim().length < 2) {
+    errors.push('Name must be at least 2 characters');
+  }
+
+  if (!data.email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email)) {
+    errors.push('Please enter a valid email');
+  }
+
+  if (!data.message || data.message.trim().length < 10) {
+    errors.push('Message must be at least 10 characters');
+  }
+
+  return errors;
+}
+
+// Updated form handler
 document.addEventListener('submit', async (e) => {
-  // Only handle our contact form
   if (!e.target.matches('#contact-form')) return;
 
   console.log('📝 Form submission detected!');
@@ -223,18 +241,34 @@ document.addEventListener('submit', async (e) => {
   const successMsg = document.getElementById('success-message');
   const errorMsg = document.getElementById('error-message');
 
-  console.log('Form elements:', {
-    submitBtn: !!submitBtn,
-    successMsg: !!successMsg,
-    errorMsg: !!errorMsg
-  });
-
-  // Disable button
-  submitBtn.disabled = true;
-  submitBtn.textContent = 'Sending...';
+  // Hide previous messages
+  if (successMsg) {
+    successMsg.classList.add('hidden');
+    gsap.set(successMsg, { opacity: 0, y: 20 });
+  }
+  if (errorMsg) {
+    errorMsg.classList.add('hidden');
+    gsap.set(errorMsg, { opacity: 0, y: 20 });
+  }
 
   const formData = new FormData(form);
   const data = Object.fromEntries(formData);
+
+  // Client-side validation
+  const validationErrors = validateForm(data);
+  if (validationErrors.length > 0) {
+    if (errorMsg) {
+      errorMsg.textContent = validationErrors.join('. ');
+      errorMsg.classList.remove('hidden');
+      gsap.to(errorMsg, { opacity: 1, y: 0, duration: 0.5, ease: 'power2.out' });
+    }
+    return;
+  }
+
+  // Disable button
+  submitBtn.disabled = true;
+  const originalText = submitBtn.textContent;
+  submitBtn.textContent = 'Sending...';
 
   console.log('📤 Sending data:', data);
 
@@ -242,7 +276,11 @@ document.addEventListener('submit', async (e) => {
     const response = await fetch('/api/contact', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(data)
+      body: JSON.stringify({
+        name: data.name.trim(),
+        email: data.email.trim().toLowerCase(),
+        message: data.message.trim()
+      })
     });
 
     console.log('📨 Response status:', response.status);
@@ -252,10 +290,9 @@ document.addEventListener('submit', async (e) => {
     if (response.ok) {
       form.reset();
 
-      // Success animation
       if (successMsg) {
+        successMsg.textContent = result.message || '✓ Message sent successfully! We\'ll get back to you soon.';
         successMsg.classList.remove('hidden');
-        gsap.set(successMsg, { opacity: 0, y: 20 }); // Set initial state
         gsap.to(successMsg, {
           opacity: 1,
           y: 0,
@@ -265,7 +302,7 @@ document.addEventListener('submit', async (e) => {
         console.log('✅ Success message shown');
       }
 
-      // Auto-hide after 5 seconds
+      // Auto-hide after 6 seconds
       setTimeout(() => {
         if (successMsg) {
           gsap.to(successMsg, {
@@ -275,14 +312,12 @@ document.addEventListener('submit', async (e) => {
             onComplete: () => successMsg.classList.add('hidden')
           });
         }
-      }, 5000);
+      }, 6000);
 
     } else {
-      // Show error
       if (errorMsg) {
         errorMsg.textContent = result.error || 'Something went wrong';
         errorMsg.classList.remove('hidden');
-        gsap.set(errorMsg, { opacity: 0, y: 20 });
         gsap.to(errorMsg, {
           opacity: 1,
           y: 0,
@@ -297,7 +332,6 @@ document.addEventListener('submit', async (e) => {
     if (errorMsg) {
       errorMsg.textContent = 'Network error. Please try again.';
       errorMsg.classList.remove('hidden');
-      gsap.set(errorMsg, { opacity: 0, y: 20 });
       gsap.to(errorMsg, {
         opacity: 1,
         y: 0,
@@ -307,7 +341,7 @@ document.addEventListener('submit', async (e) => {
     }
   } finally {
     submitBtn.disabled = false;
-    submitBtn.textContent = 'Send Message';
+    submitBtn.textContent = originalText;
   }
 });
 
