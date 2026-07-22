@@ -13,7 +13,6 @@ export async function loadSection(path, containerId) {
     }
     const html = await response.text();
     container.innerHTML = html;
-    console.log(`✅ Loaded ${path} into #${containerId}`);
     return true;
   } catch (error) {
     console.error(`Error loading ${path}:`, error);

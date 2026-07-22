@@ -2,73 +2,66 @@
 import '../styles/main.css';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { ScrollSmoother } from 'gsap/ScrollSmoother';
 import { loadSection } from './section-loader.js';
 import * as THREE from 'three';
 import { animateServices } from './animations/services.js';
 import { animateComparison } from './animations/comparison.js';
 
-gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
+gsap.registerPlugin(ScrollTrigger);
 
 let smoother = null;
 
-// ── SCROLLSMOTHER CREATOR ──
-function createSmoothScroller() {
-  return ScrollSmoother.create({
-    wrapper: "#smooth-wrapper",
-    content: "#smooth-content",
-    smooth: 1,
-    effects: true,
-  });
-}
-
 function refreshScroll() {
-  if (smoother) {
-    smoother.refresh();
-  }
   ScrollTrigger.refresh();
 }
 
 // ── SECTION LOADER ──
 async function init() {
-  // Load main hero content
-  await loadSection('/src/sections/hero.html', 'section-hero');
+  try {
+    // Load ALL sections first
+    const sections = [
+      { path: '/src/sections/hero.html', id: 'section-hero' },
+      { path: '/src/sections/about.html', id: 'section-about' },
+      { path: '/src/sections/services.html', id: 'section-services', animate: animateServices },
+      { path: '/src/sections/comparison.html', id: 'section-comparison', animate: animateComparison },
+      { path: '/src/sections/contact.html', id: 'section-contact' },
+    ];
 
-  // Initialize ScrollSmoother after hero is loaded
-  smoother = createSmoothScroller();
-  window._smoother = smoother;
-
-  // Load remaining sections
-  const sections = [
-    { path: '/src/sections/about.html', id: 'section-about' },
-    { path: '/src/sections/services.html', id: 'section-services', animate: animateServices },
-    { path: '/src/sections/comparison.html', id: 'section-comparison', animate: animateComparison },
-    { path: '/src/sections/contact.html', id: 'section-contact' },
-  ];
-
-  for (const section of sections) {
-    const loaded = await loadSection(section.path, section.id);
-    if (loaded) {
-      // Only animate if the section has an animate function
-      if (section.animate) {
-        section.animate();
+    // Load all sections
+    for (const section of sections) {
+      const loaded = await loadSection(section.path, section.id);
+      if (loaded) {
+        console.log(`✅ Loaded ${section.path}`);
       }
-      refreshScroll();
     }
+
+    // Wait a moment for DOM to update
+    await new Promise(resolve => setTimeout(resolve, 100));
+
+    // Now initialize everything
+    initThreeScene();
+    setupMenu();
+
+    // Animate sections after everything is loaded
+    for (const section of sections) {
+      if (section.animate) {
+        try {
+          section.animate();
+        } catch (error) {
+          console.warn(`Error animating ${section.id}:`, error);
+        }
+      }
+    }
+
+    // Final refresh
+    setTimeout(() => {
+      ScrollTrigger.refresh();
+      console.log('🔄 ScrollTrigger refreshed');
+    }, 500);
+
+  } catch (error) {
+    console.error('Error initializing app:', error);
   }
-
-  // ── INITIALIZE 3D SCENE ──
-  initThreeScene();
-
-  // ── SETUP MENU ──
-  setupMenu();
-
-  // ── FINAL REFRESH ──
-  setTimeout(() => {
-    if (smoother) smoother.refresh();
-    ScrollTrigger.refresh();
-    console.log('🔄 ScrollSmoother and ScrollTrigger refreshed');
-  }, 500);
 }
 
 // ── 3D SCENE SETUP ──
@@ -78,6 +71,15 @@ async function initThreeScene() {
     const { GLTFLoader } = await import('three/examples/jsm/loaders/GLTFLoader.js');
     const { createLaptop } = await import('../three/createLaptop.js');
 
+    // Wait for hero to be in DOM
+    const heroSection = document.querySelector('#hero');
+    if (!heroSection) {
+      console.warn('Hero section not found, waiting...');
+      // Try again after a delay
+      setTimeout(initThreeScene, 500);
+      return;
+    }
+
     const stage = document.getElementById('canvas-stage');
     const imageEl = document.getElementById('screen-image');
 
@@ -86,14 +88,14 @@ async function initThreeScene() {
       return;
     }
 
+    console.log('✅ Canvas stage found, initializing Three.js...');
+
     const { scene, camera, renderer } = setupScene(stage);
     const loader = new GLTFLoader();
     let laptop;
 
-    // Try loading the model with proper path
-    const modelPath = new URL('/models/laptop.gltf', import.meta.url).href;
-
-    loader.load(modelPath, (gltf) => {
+    // Try loading the model
+    loader.load('/models/laptop.gltf', (gltf) => {
       laptop = gltf.scene;
       const screenMesh = laptop.getObjectByName('Screen') ||
         laptop.getObjectByName('screen') ||
@@ -199,7 +201,10 @@ function setupMenu() {
   const menuPopup = document.getElementById('menuPopup');
   const menuLinks = document.querySelectorAll('.menu-link');
 
-  if (!menuBtn || !menuPopup) return;
+  if (!menuBtn || !menuPopup) {
+    console.warn('Menu elements not found');
+    return;
+  }
 
   function openMenu() {
     menuPopup.classList.remove('pointer-events-none', 'opacity-0');
