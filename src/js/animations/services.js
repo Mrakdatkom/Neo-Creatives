@@ -35,7 +35,7 @@ export function animateServices() {
 
     tl.to(text, { scale: 0.2, ease: "none", duration: 0.2 }, 0)
       .to(cards, { yPercent: 0, opacity: 1, ease: "power2.out", duration: 0.4 }, 0.15)
-      .to(cards, { yPercent: -140, stagger: 0.15, ease: "none", duration: 0.3 }, 0.55)
+      .to(cards, { yPercent: -140, ease: "none", duration: 0.3 }, 0.55)
       .to(text, { opacity: 0, ease: "none", duration: 0.1 }, 0.8);
   });
 
