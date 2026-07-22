@@ -5,6 +5,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { loadSection } from './section-loader.js';
 import * as THREE from 'three';
 import { animateServices } from './animations/services.js';
+import { animateComparison } from './animations/comparison.js';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -26,6 +27,7 @@ async function init() {
   const sections = [
     { path: '/src/sections/about.html', id: 'section-about' },
     { path: '/src/sections/services.html', id: 'section-services', animate: animateServices },
+    { path: '/src/sections/comparison.html', id: 'section-comparison', animate: animateComparison },
     { path: '/src/sections/contact.html', id: 'section-contact' },
   ];
 
