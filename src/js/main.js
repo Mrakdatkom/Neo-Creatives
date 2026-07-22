@@ -1,57 +1,63 @@
-// src\js\main.js
+// src/js/main.js
 import '../styles/main.css';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { loadSection } from './section-loader.js';
 import * as THREE from 'three';
 import { animateServices } from './animations/services.js';
 import { animateComparison } from './animations/comparison.js';
 
 gsap.registerPlugin(ScrollTrigger);
 
-let smoother = null;
+const fallbackHTML = `<div class="min-h-screen flex items-center justify-center text-white/50">Loading...</div>`;
 
-function refreshScroll() {
-  ScrollTrigger.refresh();
+async function loadSectionHTML(containerId, path) {
+  const container = document.getElementById(containerId);
+  if (!container) {
+    console.warn(`Container #${containerId} not found`);
+    return false;
+  }
+
+  try {
+    console.log(`📥 Fetching ${path}...`);
+    const response = await fetch(path);
+    if (!response.ok) {
+      throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+    }
+    const html = await response.text();
+    container.innerHTML = html;
+    console.log(`✅ Loaded ${containerId} from ${path} (${html.length} chars)`);
+    return true;
+  } catch (error) {
+    console.error(`❌ Failed to load ${containerId}:`, error);
+    container.innerHTML = fallbackHTML;
+    return false;
+  }
 }
 
-// ── SECTION LOADER ──
+// ── INIT ──
 async function init() {
   try {
-    // Load ALL sections first
-    const sections = [
-      { path: '/src/sections/hero.html', id: 'section-hero' },
-      { path: '/src/sections/about.html', id: 'section-about' },
-      { path: '/src/sections/services.html', id: 'section-services', animate: animateServices },
-      { path: '/src/sections/comparison.html', id: 'section-comparison', animate: animateComparison },
-      { path: '/src/sections/contact.html', id: 'section-contact' },
-    ];
+    console.log('🚀 Initializing app...');
+    console.log('📍 Loading sections from /sections/');
 
-    // Load all sections
-    for (const section of sections) {
-      const loaded = await loadSection(section.path, section.id);
-      if (loaded) {
-        console.log(`✅ Loaded ${section.path}`);
-      }
-    }
+    // Load all sections from public folder
+    await loadSectionHTML('section-hero', '/sections/hero.html');
+    await loadSectionHTML('section-about', '/sections/about.html');
+    await loadSectionHTML('section-services', '/sections/services.html');
+    await loadSectionHTML('section-comparison', '/sections/comparison.html');
+    await loadSectionHTML('section-contact', '/sections/contact.html');
 
-    // Wait a moment for DOM to update
-    await new Promise(resolve => setTimeout(resolve, 100));
+    // Wait for DOM to update
+    await new Promise(resolve => setTimeout(resolve, 300));
 
-    // Now initialize everything
+    // Check if hero exists after loading
+    const hero = document.getElementById('hero');
+    console.log('Hero element exists:', !!hero);
+
+    // Initialize everything
     initThreeScene();
     setupMenu();
-
-    // Animate sections after everything is loaded
-    for (const section of sections) {
-      if (section.animate) {
-        try {
-          section.animate();
-        } catch (error) {
-          console.warn(`Error animating ${section.id}:`, error);
-        }
-      }
-    }
+    setupAnimations();
 
     // Final refresh
     setTimeout(() => {
@@ -65,20 +71,12 @@ async function init() {
 }
 
 // ── 3D SCENE SETUP ──
+// In main.js - Updated Three.js loading with better error handling
 async function initThreeScene() {
   try {
     const { setupScene } = await import('../three/setupScene.js');
     const { GLTFLoader } = await import('three/examples/jsm/loaders/GLTFLoader.js');
     const { createLaptop } = await import('../three/createLaptop.js');
-
-    // Wait for hero to be in DOM
-    const heroSection = document.querySelector('#hero');
-    if (!heroSection) {
-      console.warn('Hero section not found, waiting...');
-      // Try again after a delay
-      setTimeout(initThreeScene, 500);
-      return;
-    }
 
     const stage = document.getElementById('canvas-stage');
     const imageEl = document.getElementById('screen-image');
@@ -93,58 +91,77 @@ async function initThreeScene() {
     const { scene, camera, renderer } = setupScene(stage);
     const loader = new GLTFLoader();
     let laptop;
+    let modelLoaded = false;
 
-    // Try loading the model
-    loader.load('/models/laptop.gltf', (gltf) => {
-      laptop = gltf.scene;
-      const screenMesh = laptop.getObjectByName('Screen') ||
-        laptop.getObjectByName('screen') ||
-        laptop.getObjectByName('Display');
+    // Try loading the GLTF model
+    loader.load(
+      '/models/laptop.gltf',
+      (gltf) => {
+        try {
+          laptop = gltf.scene;
+          const screenMesh = laptop.getObjectByName('Screen') ||
+            laptop.getObjectByName('screen') ||
+            laptop.getObjectByName('Display');
 
-      if (screenMesh && imageEl) {
-        const texture = new THREE.Texture(imageEl);
-        texture.colorSpace = THREE.SRGBColorSpace;
+          if (screenMesh && imageEl) {
+            const texture = new THREE.Texture(imageEl);
+            texture.colorSpace = THREE.SRGBColorSpace;
 
-        if (imageEl.complete) {
-          texture.needsUpdate = true;
-        } else {
-          imageEl.onload = () => {
-            texture.needsUpdate = true;
-            screenMesh.material.map = texture;
-            screenMesh.material.needsUpdate = true;
-          };
+            if (imageEl.complete) {
+              texture.needsUpdate = true;
+            } else {
+              imageEl.onload = () => {
+                texture.needsUpdate = true;
+                screenMesh.material.map = texture;
+                screenMesh.material.needsUpdate = true;
+              };
+            }
+
+            screenMesh.material = new THREE.MeshBasicMaterial({
+              map: texture,
+              color: 0xffffff,
+            });
+            laptop.userData.screen = screenMesh;
+          }
+
+          laptop.scale.setScalar(0.9);
+          laptop.position.set(0, 0.1, 0);
+          laptop.rotation.x = THREE.MathUtils.degToRad(10);
+          laptop.rotation.y = THREE.MathUtils.degToRad(-20);
+
+          scene.add(laptop);
+          setupLaptopAnimations(laptop, camera);
+          modelLoaded = true;
+          console.log('✅ Laptop model loaded successfully!');
+        } catch (err) {
+          console.warn('Error processing GLTF model:', err);
+          useFallbackLaptop();
         }
-
-        screenMesh.material = new THREE.MeshBasicMaterial({
-          map: texture,
-          color: 0xffffff,
-        });
-        laptop.userData.screen = screenMesh;
+      },
+      (progress) => {
+        // Progress callback
+        console.log(`Loading model: ${Math.round((progress.loaded / progress.total) * 100)}%`);
+      },
+      (error) => {
+        console.warn('Error loading laptop model:', error);
+        useFallbackLaptop();
       }
+    );
 
-      laptop.scale.setScalar(0.9);
-      laptop.position.set(0, 0.1, 0);
-      laptop.rotation.x = THREE.MathUtils.degToRad(10);
-      laptop.rotation.y = THREE.MathUtils.degToRad(-20);
-
-      scene.add(laptop);
-      setupAnimations(laptop, camera);
-      console.log('✅ Laptop model loaded successfully!');
-
-    }, undefined, (error) => {
-      console.warn('Error loading laptop model, using fallback:', error);
+    function useFallbackLaptop() {
+      if (modelLoaded) return;
       if (imageEl) {
         const fallbackLaptop = createLaptop(imageEl);
         laptop = fallbackLaptop;
         laptop.scale.setScalar(0.9);
         laptop.position.set(0, 0.1, 0);
         scene.add(laptop);
-        setupAnimations(laptop, camera);
+        setupLaptopAnimations(laptop, camera);
         console.log('✅ Using fallback procedural laptop');
       }
-    });
+    }
 
-    function setupAnimations(laptop, camera) {
+    function setupLaptopAnimations(laptop, camera) {
       const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
       gsap.from(laptop.scale, {
@@ -161,17 +178,20 @@ async function initThreeScene() {
       });
 
       if (!prefersReducedMotion) {
-        gsap.timeline({
-          scrollTrigger: {
-            trigger: '#hero',
-            start: 'top top',
-            end: 'bottom top',
-            scrub: 1,
-          },
-        })
-          .to(laptop.rotation, { y: Math.PI * 0.35, x: -0.15 }, 0)
-          .to(laptop.position, { y: 0.9, z: 1.2 }, 0)
-          .to(camera.position, { y: 0.9 }, 0);
+        const hero = document.getElementById('hero');
+        if (hero) {
+          gsap.timeline({
+            scrollTrigger: {
+              trigger: hero,
+              start: 'top top',
+              end: 'bottom top',
+              scrub: 1,
+            },
+          })
+            .to(laptop.rotation, { y: Math.PI * 0.35, x: -0.15 }, 0)
+            .to(laptop.position, { y: 0.9, z: 1.2 }, 0)
+            .to(camera.position, { y: 0.9 }, 0);
+        }
       }
 
       gsap.to(laptop.rotation, {
@@ -239,6 +259,16 @@ function setupMenu() {
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') closeMenu();
   });
+}
+
+// ── SETUP ANIMATIONS ──
+function setupAnimations() {
+  try {
+    animateServices();
+    animateComparison();
+  } catch (error) {
+    console.warn('Error setting up animations:', error);
+  }
 }
 
 // ── START ──
